@@ -46,11 +46,11 @@ My lectures can be listened to as youtube tracks [(all lectures)](https://www.yo
 
 ## Exams
 
-* Midterm I Tuesday, March 5 (in class, KY283).
+* Midterm I Tues, March 5 (in class, KY283).
 
 
 
-* Midterm II Monday, April 16 (in class, KY283).
+* Midterm II Thurs, April 11 (in class, KY283).
 
 
 
