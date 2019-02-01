@@ -27,10 +27,10 @@ My lectures can be listened to as youtube tracks [(all lectures)](https://www.yo
 * Lecture 6 [(audio)](https://youtu.be/m37ahpnT6iI) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec06figueroa.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec06kap.pdf)
 * Lecture 5 [(audio)](https://youtu.be/TEFc5dKbF-8) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec05figueroa.pdf) [(Jaslyn Lin)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec05lin.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec05kap.pdf)
 * Lecture 4 [(audio)](https://youtu.be/MXVmb_bkgHI) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec04figueroa.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec04kap.pdf)
-* Lecture 3 [(audio)](https://youtu.be/VdBowk_x95o) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec03figueroa.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec03kap.pdf)
-* Lecture 2 [(audio)](https://youtu.be/_-Fvr5Upg6c) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec02figueroa.pdf) [(Karina Aponte)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec02aponte.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec02kap.pdf)
-* Lecture 1 [(audio)](https://youtu.be/EYCNb10vOLc) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec01figueroa.pdf) [(Karina Aponte)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec01aponte.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec01kap.pdf)
--->
+* Lecture 3 [(audio)](https://youtu.be/VdBowk_x95o) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec03figueroa.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec03kap.pdf)-->
+* Lecture 2 [(audio)](https://youtu.be/iYU0iBITt90) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec02kap.pdf)
+* Lecture 1 [(audio)](https://youtu.be/CExBhy6zzxg) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec01kap.pdf)
+
 
 ## Homeworks
 
@@ -39,8 +39,8 @@ My lectures can be listened to as youtube tracks [(all lectures)](https://www.yo
 * Homework 5 [(download)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/homeworks/hw05/hw05.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/homeworks/hw05/hw05.pdf) (due 5/4)
 * Homework 4 [(download)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/homeworks/hw04/hw04.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/homeworks/hw04/hw04.pdf) (due 4/13)
 * Homework 3 [(download)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/homeworks/hw03/hw03.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/homeworks/hw03/hw03.pdf) (due 3/16)
-* Homework 2 [(download)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/homeworks/hw02/hw02.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/homeworks/hw02/hw02.pdf) (due 3/2)
-* Homework 1 [(download)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/homeworks/hw01/hw01.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/homeworks/hw01/hw01.pdf) (due 2/16)-->
+* Homework 2 [(download)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/homeworks/hw02/hw02.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/homeworks/hw02/hw02.pdf) (due 3/2)-->
+* Homework 1 [(download)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/homeworks/hw01/hw01.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/homeworks/hw01/hw01.pdf) (due 2/8)
 * Homework 0 [(last few pages of syllabus)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/syllabus/syllabus.pdf?raw=true) (due 2/1)
 
 

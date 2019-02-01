@@ -1,0 +1,241 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\newtoggle{professormode}
+\toggletrue{professormode} %STUDENTS: DELETE or COMMENT this line
+
+
+
+\title{MATH 341 / 650.3 Spring 2019 Homework \#1}
+
+\author{Professor Adam Kapelner} %STUDENTS: write your name here
+
+\iftoggle{professormode}{
+\date{Due in KY604, Friday 5PM, February 8, 2018 \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
+}
+
+\renewcommand{\abstractname}{Instructions and Philosophy}
+
+\begin{document}
+\maketitle
+
+\iftoggle{professormode}{
+\begin{abstract}
+The path to success in this class is to do many problems. Unlike other courses, exclusively doing reading(s) will not help. Coming to lecture is akin to watching workout videos; thinking about and solving problems on your own is the actual ``working out.''  Feel free to \qu{work out} with others; \textbf{I want you to work on this in groups.}
+
+Reading is still \textit{required}. For this homework set, review Math 241 concerning random variables, support, parameter space, PMF's, PDF's, CDF's, Bayes Rule, read about parametric families and maximum likelihood estimators on the Internet, read the preface and ch 1 and 4 of Bolstad and read the preface and Ch1 of McGrayne.
+
+The problems below are color coded: \ingreen{green} problems are considered \textit{easy} and marked \qu{[easy]}; \inorange{yellow} problems are considered \textit{intermediate} and marked \qu{[harder]}, \inred{red} problems are considered \textit{difficult} and marked \qu{[difficult]} and \inpurple{purple} problems are extra credit. The \textit{easy} problems are intended to be ``giveaways'' if you went to class. Do as much as you can of the others; I expect you to at least attempt the \textit{difficult} problems. 
+
+Problems marked \qu{[MA]} are for the masters students only (those enrolled in the 650.3 course). For those in 341, doing these questions will count as extra credit.
+
+This homework is worth 100 points but the point distribution will not be determined until after the due date. See syllabus for the policy on late homework.
+
+Up to 10 points are given as a bonus if the homework is typed using \LaTeX. Links to instaling \LaTeX~and program for compiling \LaTeX~is found on the syllabus. You are encouraged to use \url{overleaf.com}. If you are handing in homework this way, read the comments in the code; there are two lines to comment out and you should replace my name with yours and write your section. The easiest way to use overleaf is to copy the raw text from hwxx.tex and preamble.tex into two new overleaf tex files with the same name. If you are asked to make drawings, you can take a picture of your handwritten drawing and insert them as figures or leave space using the \qu{$\backslash$vspace} command and draw them in after printing or attach them stapled.
+
+The document is available with spaces for you to write your answers. If not using \LaTeX, print this document and write in your answers. I do not accept homeworks which are \textit{not} on this printout. Keep this first page printed for your records.
+
+\end{abstract}
+
+\thispagestyle{empty}
+\vspace{1cm}
+NAME: \line(1,0){380}
+\clearpage
+}
+
+\problem{These are questions about McGrayne's book, preface, chapter 1, 2 and 3.}
+
+\begin{enumerate}
+
+\easysubproblem{Explain Hume's problem of induction with the sun rising every day.}\spc{3}
+
+\easysubproblem{Explain the \qu{inverse probability problem.}}\spc{3}
+
+\easysubproblem{What is Bayes' billiard table problem?}\spc{3}
+
+\hardsubproblem{[MA] How did Price use Bayes' idea to prove the existence of the deity?} \spc{3}
+
+\easysubproblem{Why should Bayes Rule really be called \qu{Laplace's Rule?}}\spc{3}
+
+\hardsubproblem{Prove the version of Bayes Rule found on page 20. State your assumption(s) explicitly. Reference class notes as well.}\spc{4}
+
+\easysubproblem{Give two scientific contexts where Laplace used inverse probability theory to solve major problems.}\spc{3}
+
+\hardsubproblem{[MA] Why did Laplace turn into a frequentist later in life?} \spc{3}
+
+\easysubproblem{State Laplace's version of Bayes Rule (p31).} \spc{3}
+
+\easysubproblem{Why was Bayes Rule \qu{damned} (pp36-37)?} \spc{3}
+
+\easysubproblem{According to Edward Molina, what is the prior (p41)?} \spc{3}
+
+\easysubproblem{What is the source of the \qu{credibility} metric that insurance companies used in the 1920's?} \spc{3}
+
+\easysubproblem{Can the principle of inverse probability work without priors? Yes/no.} \spc{1}
+
+\hardsubproblem{In class we discussed the \qu{principle of indifference} which is a term I borrowed from \href{http://www.amazon.com/Philosophical-Theories-Probability-Issues-Science/dp/041518276X/ref=sr_1_1?ie=UTF8&qid=1455112335&sr=8-1&keywords=donald+gillies+theory+of+probability}{Donald Gillies' Philosophical Theories of Probability}. On Wikipedia, it says that Jacob Bernoulli called it the \qu{principle of insufficient reason}. McGrayne in her research of original sources comes up with many names throughout history this principle was named. List all of them you can find here.} \spc{3}
+
+\easysubproblem{Jeffreys seems to be the founding father of modern Bayesian Statistics. But why did the world turn frequentist in the 1920's? (p57)} \spc{3}
+\end{enumerate}
+
+\problem{These exercises will review the Bernoulli model.}
+
+
+\begin{enumerate}
+
+\easysubproblem{If $X \sim \bernoulli{\theta}$, find $\expe{X}$, $\var{X}$, $\support{X}$ and $\Theta$. No need to derive from first principles, just find the formulas.}\spc{2}
+
+\intermediatesubproblem{If $X \sim \bernoulli{\theta}$, find $\median{X}$.}\spc{2}
+
+\intermediatesubproblem{If $X \sim \bernoulli{\theta}$, write the \qu{parametric statistical model} below using the notation we used in class only wit a semicolon.}\spc{2}
+
+
+\intermediatesubproblem{Explain what the semicolon notation in the previous answer indicates.}\spc{2}
+
+\easysubproblem{If $\Xoneton \iid \bernoulli{\theta}$, find the likelihood, $\mathcal{L}$, of $\theta$.}\spc{2}
+
+\hardsubproblem{Given the likelihood above, what would $\mathcal{L}$ be if the data was $<0,1,0,1,3.7>$? Why should this answer have to be?}\spc{2}
+
+\easysubproblem{If $\Xoneton \iid \bernoulli{\theta}$, find the log-likelihood of $\theta$, $\ell(\theta)$.}\spc{2}
+
+\hardsubproblem{[MA] If $\Xoneton \iid f(x;\theta)$, explain why the log-likelihood of $\theta$ is normally distributed if $n$ gets large.}\spc{6}
+
+\easysubproblem{If $\Xoneton \iid \bernoulli{\theta}$, find the score function (i.e the derivative of the log-likelihood) of $\theta$.}\spc{2}
+
+\intermediatesubproblem{If $\Xoneton \iid \bernoulli{\theta}$, find the maximum likelihood estimator for $\theta$. An \qu{estimator} is a random variable.}\spc{4}
+
+\easysubproblem{If $\Xoneton \iid \bernoulli{\theta}$, find the maximum likelihood \textit{estimate} for $\theta$. An \qu{estimate} is a number.}\spc{1}
+
+\easysubproblem{If your data is $<0,1,1,0,1,1,0,1,1,1>$, find the maximum likelihood estimate for $\theta$.}\spc{1}
+
+\easysubproblem{Given this data, find a 99\% confidence interval for $\theta$.}\spc{4}
+
+\intermediatesubproblem{Given this data, test $H_0: \theta = 0.5$ versus $H_a: \theta \neq 0.5$.}\spc{7}
+
+
+\easysubproblem{Write the PDF of $X \sim \normnot{\theta}{1^2}$.}\spc{5}
+
+\hardsubproblem{Find the MLE for $\theta$ if $\Xoneton \iid \normnot{\theta}{1^2}$.}\spc{6}
+
+\hardsubproblem{[MA] Find the MLE for $\theta$ if $\Xoneton \iid \normnot{\mu}{\sigsq}$. Solve the system of equations $\partialop{\mu}{\ell(\theta)} = 0$ and $\partialop{\sigsq}{\ell(\theta)} = 0$ where $\ell(\theta)$ denotes the log likelihood. You can easily find this online. But try to do it yourself.} \spc{20}
+
+
+\end{enumerate}
+
+\problem{We will review the frequentist perspective here.}
+
+\begin{enumerate}
+
+\hardsubproblem{Why do frequentists have an insistence on $\theta$ being a fixed, immutable quantity? We didn't cover this in class explicitly but it is lurking behind the scenes. Use your reference resources.}\spc{5}
+
+\easysubproblem{What are the three goals of inference? Give short explanations.}\spc{5}
+
+\easysubproblem{What are the three reasons why \emph{frequentists} (adherents to the frequentist perspective) use MLEs i.e. list three properties of MLEs that make them powerful.}\spc{6}
+
+\hardsubproblem{[MA] Give the conditions for asymptotic normality of the MLE,
+
+\beqn
+\frac{\thetahatmle - \theta}{\se{\thetahatmle}} \convd \stdnormnot.
+\eeqn
+
+You can find them online.}\spc{8}
+
+\hardsubproblem{[MA] $\se{\thetahatmle}$ cannot be found without $\theta$ so we substituted $\thetahatmle$ into $\se{\thetahatmle}$ and called it $\seest{\thetahatmle}$ (note the hat over the SE). Show that this too is asymptotically normal, \ie
+
+\beqn
+\frac{\thetahatmle - \theta}{\seest{\thetahatmle}} \convd \stdnormnot
+\eeqn
+
+You need the continuous mapping theorem and Slutsky's theorem.
+}\spc{4}
+
+\easysubproblem{[MA] Explain why the previous question allows us to build asymptotically valid confidence intervals using $\bracks{\thetahatmle \pm z_{\alpha/2} \seest{\thetahatmle}}$}.\spc{3}
+
+\intermediatesubproblem{Why does some of frequentist inference break down if $n$ isn't large?}\spc{2}
+
+\easysubproblem{Write the most popular two frequentist interpretations of a confidence interval.}\spc{6}
+
+\intermediatesubproblem{Why are each of these unsatisfactory?}\spc{3}
+
+\easysubproblem{What are the two possible outcomes of a hypothesis test?}\spc{1}
+
+\hardsubproblem{[MA] What is the weakness of the interpretation of the $p$-val?}\spc{6}
+
+
+\end{enumerate}
+
+
+\problem{We review and build upon conditional probability here.}
+
+\begin{enumerate}
+
+
+\easysubproblem{Explain why $\cprob{B}{A} \propto \cprob{A}{B}$.}\spc{6}
+
+\easysubproblem{If $B$ represents the hypothesis or the putative cause and $A$ represents evidence or data, explain what Bayesian Conditionalism is, going from which probability statement to which probability statement.}\spc{3}
+
+\end{enumerate}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\intermediatesubproblem{In class we presented the posterior odds form of Bayes Theorem. Prove it below.}\spc{10}
+
+
+\intermediatesubproblem{Show that the Bayes Factor is the ratio of posterior odds of the hypothesis to prior odds of the hypothesis.}\spc{2}
+
+\easysubproblem{On the \href{https://en.wikipedia.org/wiki/Bayes_factor}{wikipedia page about Bayes Factors}, Harrold Jeffreys (who we will be returning to later in the semester) gave interpretations of Bayes Factors (which is denoted $K$ there and $B$ in Bolstad's book on page 70). Give the ranges of $K$ here (not in terms of powers of 10, but as a pure number) for his interpretations i.e. \qu{negative,} \qu{strong,} etc.}\spc{3}
+
+\hardsubproblem{[MA] Conceptually why should the likelihood being greater than $\prob{A}$ imply that the hypothesis is more likely after observing the data than before?}\spc{6}
+\end{enumerate}
+
+\problem{We examine here paternity testing (i.e. answering the question \qu{is this guy the father of my child?}) via the simplistic test using blood types. These days, more advanced genetic methods exist so these calculations aren't made in practice, but they are a nice exercise. 
+
+First a crash course on basic genetics. In general, everyone has two alleles (your genotype) with one coming from your mother and one coming from your father. The mother passes on each of the alleles with 50\% probability and the father passes on each allele with 50\% probability. One allele gets expressed (your phenotype). So one of the genes shone through (the dominant one) and one was masked (the recessive one). Dominant blood types are A and B and the recessive type is o (lowercase letter). The only way to express phenotype o is to have genotype oo i.e. both genes are o. There is an exception; A and B are codominant meaning that blood type AB tests positive for both A and B.
+
+In this case consider a child of blood type B and the mother of blood type A. Using this \href{http://www.cccoe.net/genetics/blood2.html}{hereditary guide}, we know that the mother's type must be Ao so she passed on an o to the child thus the child got the B from the father. Thus the father had type AB, BB or Bo. I got the following data from \href{http://www.sciencedirect.com/science/article/pii/S1110863011000796}{this paper} (so let's assume this case is in Nigeria in 1998).
+
+\begin{table}
+\centering
+\begin{tabular}{cc}
+Genotype & Frequency \\ \hline
+OO	&0.52 \\
+AA	&0.0196 \\
+AO	&0.2016 \\
+BB	&0.0196 \\
+BO	&0.2016 \\
+AB	&0.0392 \\
+\end{tabular}
+\end{table}
+} 
+
+\begin{enumerate}
+
+\easysubproblem{Bob is the alleged father and he has blood type B but his genotype is unknown. What is the probability he passes on a B to the child?}\spc{3}
+
+\easysubproblem{What is the probability a stranger passes on a B to the child?}\spc{3}
+
+\easysubproblem{Assume our prior is 50-50 Bob is the father, the customary compromise between a possibly bitter mother and father. What is the prior odds of Bob being the father? Don't think too hard about this one; it is marked easy for a reason.}\spc{6}
+
+\hardsubproblem{We are interested in the posterior question. What is the probability Bob is the father given the child with blood type B?}\spc{5}
+
+\hardsubproblem{What is the Bayes Factor here? See (a) and (b).}\spc{5}
+
+\easysubproblem{What is the probability Bob is not the father given the child with blood type B? Should be easy once you have (c) and (e).}\spc{3}
+
+\end{enumerate}
+
+
+\end{document}
