@@ -29,7 +29,7 @@ My lectures can be listened to as youtube tracks [(all lectures)](https://www.yo
 * Lecture 4 [(audio)](https://youtu.be/MXVmb_bkgHI) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec04figueroa.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec04kap.pdf)
 * Lecture 3 [(audio)](https://youtu.be/VdBowk_x95o) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec03figueroa.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec03kap.pdf)-->
 * Lecture 2 [(audio)](https://youtu.be/iYU0iBITt90) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec02kap.pdf)
-* Lecture 1 [(audio)](https://youtu.be/CExBhy6zzxg) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec01kap.pdf) [(Karen Lopez)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec01lopez.pdf) [(Abinav Patil)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec01patil.pdf) [(Shakib Khondker)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec01khondker.pdf) 
+* Lecture 1 [(audio)](https://youtu.be/CExBhy6zzxg) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec01kap.pdf) [(Karen Lopez)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec01lopez.pdf) [(Abhinav Patil)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec01patil.pdf) [(Shakib Khondker)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec01khondker.pdf) 
 
 
 ## Homeworks
