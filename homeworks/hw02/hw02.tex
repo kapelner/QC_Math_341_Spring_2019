@@ -76,7 +76,7 @@ NAME: \line(1,0){380}
 
 First a crash course on basic genetics. In general, everyone has two alleles (your genotype) with one coming from your mother and one coming from your father. The mother passes on each of the alleles with 50\% probability and the father passes on each allele with 50\% probability. One allele gets expressed (your phenotype). So one of the genes shone through (the dominant one) and one was masked (the recessive one). Dominant blood types are A and B and the recessive type is o (lowercase letter). The only way to express phenotype o is to have genotype oo i.e. both genes are o. There is an exception; A and B are codominant meaning that blood type AB tests positive for both A and B.
 
-In this case consider a child of blood type B and the mother of blood type A. Using this \href{http://www.cccoe.net/genetics/blood2.html}{hereditary guide}, we know that the mother's type must be Ao so she passed on an o to the child thus the child got the B from the father. Thus the father had type AB, BB or Bo. I got the following data from \href{http://www.sciencedirect.com/science/article/pii/S1110863011000796}{this paper} (so let's assume this case is in Nigeria in 1998).
+In this case consider a child of blood type B (and negative for A) and the mother of blood type A (and negative for B). Using this \href{http://www.cccoe.net/genetics/blood2.html}{hereditary guide}, we know that the mother's type must be Ao so she passed on an o to the child thus the child got the B from the father. Thus the father had type AB, BB or Bo. I got the following frequency data from \href{http://www.sciencedirect.com/science/article/pii/S1110863011000796}{this paper} (so let's assume this case is in Nigeria in 1998). You can assume $n$ is large enough so that these frequencies are as good as the true probabilities.
 
 \begin{table}[h]
 \centering
@@ -94,17 +94,19 @@ AB	&0.0392 \\
 
 \begin{enumerate}
 
-\easysubproblem{Bob is the alleged father and he has blood type B but his genotype is unknown. What is the probability he passes on a B to the child?}\spc{3}
 
-\easysubproblem{What is the probability a stranger passes on a B to the child?}\spc{3}
+\intermediatesubproblem{What is the probability a stranger passes on a B to the child?}\spc{3}
+
+\hardsubproblem{Bob is the alleged father and he has blood type B but his genotype is unknown. What is the probability he passes on a B to the child? Hint: it is the same as (a) except now}\spc{3}
+
 
 %\easysubproblem{Assume our prior is 50-50 Bob is the father, the customary compromise between a possibly bitter mother and father. What is the prior odds of Bob being the father? Don't think too hard about this one; it is marked easy for a reason.}\spc{6}
 
-\hardsubproblem{We are interested in the posterior question. What is the probability Bob is the father given the child with blood type B?}\spc{5}
+\hardsubproblem{We are interested in the posterior question. What is the probability Bob is the father given the child with blood type B? You can assume a prior of indifference.}\spc{5}
 
 %\hardsubproblem{What is the Bayes Factor here? See (a) and (b).}\spc{5}
 
-\easysubproblem{What is the probability Bob is not the father given the child with blood type B? Should be easy once you have (c) and (e).}\spc{3}
+\easysubproblem{What is the probability Bob is not the father given the child with blood type B?}\spc{3}
 
 \end{enumerate}
 
