@@ -46,16 +46,11 @@ My lectures can be listened to as youtube tracks [(all lectures)](https://www.yo
 
 ## Exams
 
-* Midterm I Tues, March 5 (in class, KY283).
-
-
+* Midterm I Tues, March 5 (in class, KY283). [(exam)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/exams/midterm1/midterm1.pdf) [(solutions)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/exams/midterm1/midterm1_solutions.pdf)
 
 * Midterm II Thurs, April 11 (in class, KY283).
 
-
-
 * Final Wednesday, May ?? 8:30-10:30AM (in class, KY283)
-
 
 ## Practice Exams
 
@@ -64,6 +59,8 @@ My lectures can be listened to as youtube tracks [(all lectures)](https://www.yo
 [(practice exam 2018)](https://github.com/kapelner/QC_Math_341_Spring_2018/blob/master/exams/midterm1/midterm1.pdf) [(practice exam 2018 solutions)](https://github.com/kapelner/QC_Math_341_Spring_2018/blob/master/exams/midterm1/midterm1_solutions.pdf)
 [(practice exam 2017)](https://github.com/kapelner/QC_Math_341_Spring_2017/blob/master/exams/midterm1/midterm1.pdf) [(practice exam 2017 solutions)](https://github.com/kapelner/QC_Math_341_Spring_2017/blob/master/exams/midterm1/midterm1_solutions.pdf) Omit 1p, 2a
 [(practice exam 2016)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/midterm1/midterm1.pdf) [(practice exam 2016 solutions)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/midterm1/midterm1_solutions.pdf) Omit 1l, m, n, t, v, w, x, z
+
+In addition, do Midterm 2
 
 * Midterm II
 

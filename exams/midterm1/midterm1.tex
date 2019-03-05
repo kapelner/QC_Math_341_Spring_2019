@@ -1,0 +1,458 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\title{Math 341 / 650 Spring 2019 \\ Midterm Examination One}
+\author{Professor Adam Kapelner}
+
+\date{Tuesday, March 5, 2019}
+
+\begin{document}
+\maketitle
+
+\noindent Full Name \line(1,0){410}
+
+\thispagestyle{empty}
+
+\section*{Code of Academic Integrity}
+
+\footnotesize
+Since the college is an academic community, its fundamental purpose is the pursuit of knowledge. Essential to the success of this educational mission is a commitment to the principles of academic integrity. Every member of the college community is responsible for upholding the highest standards of honesty at all times. Students, as members of the community, are also responsible for adhering to the principles and spirit of the following Code of Academic Integrity.
+
+Activities that have the effect or intention of interfering with education, pursuit of knowledge, or fair evaluation of a student's performance are prohibited. Examples of such activities include but are not limited to the following definitions:
+
+\paragraph{Cheating} Using or attempting to use unauthorized assistance, material, or study aids in examinations or other academic work or preventing, or attempting to prevent, another from using authorized assistance, material, or study aids. Example: using an unauthorized cheat sheet in a quiz or exam, altering a graded exam and resubmitting it for a better grade, etc.
+\\
+
+\noindent I acknowledge and agree to uphold this Code of Academic Integrity. \\
+
+\begin{center}
+\line(1,0){250} ~~~ \line(1,0){100}\\
+~~~~~~~~~~~~~~~~~~~~~signature~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ date
+\end{center}
+
+\normalsize
+
+\section*{Instructions}
+
+This exam is seventy five minutes and closed-book. You are allowed \textbf{one} page (front and back) of a \qu{cheat sheet.} You may use a graphing calculator of your choice. Please read the questions carefully. If the question reads \qu{compute,} this means the solution will be a number otherwise you can leave the answer in \textit{any} widely accepted mathematical notation which could be resolved to an exact or approximate number with the use of a computer. I advise you to skip problems marked \qu{[Extra Credit]} until you have finished the other questions on the exam, then loop back and plug in all the holes. I also advise you to use pencil. The exam is 100 points total plus extra credit. Partial credit will be granted for incomplete answers on most of the questions. \fbox{Box} in your final answers. Good luck!
+
+\pagebreak
+
+
+\begin{table}[htp]
+\centering
+\small
+\begin{tabular}{l | llll}
+Distribution                  & Quantile  & PMF / PDF  &CDF       & Sampling  \\ 
+of r.v. &  Function & function         & function &  Function \\ \hline
+beta & \texttt{qbeta}($p$, $\alpha$, $\beta$)             
+& \texttt{d-}($x$, $\alpha$, $\beta$)
+& \texttt{p-}($x$, $\alpha$, $\beta$) 
+& \texttt{r-}($\alpha$, $\beta$) \\
+betabinomial & \texttt{qbetabinom}($p$, $n$, $\alpha$, $\beta$)              
+& \texttt{d-}($x$, $n$, $\alpha$, $\beta$)
+& \texttt{p-}($x$, $n$, $\alpha$, $\beta$) 
+& \texttt{r-}($n$, $\alpha$, $\beta$) \\
+
+betanegativebinomial & \texttt{qbeta\_nbinom}($p$, $r$, $\alpha$, $\beta$) 
+& \texttt{d-}($x$, $r$, $\alpha$, $\beta$)
+& \texttt{p-}($x$, $r$, $\alpha$, $\beta$) 
+& \texttt{r-}($r$, $\alpha$, $\beta$) \\
+
+binomial & \texttt{qbinom}($p$, $n$, $\theta$) 
+& \texttt{d-}($x$, $n$, $\theta$)
+& \texttt{p-}($x$, $n$, $\theta$) 
+& \texttt{r-}($n$, $\theta$) \\
+
+exponential & \texttt{qexp}($p$, $\theta$) 
+& \texttt{d-}($x$, $\theta$) 
+& \texttt{p-}($x$, $\theta$) 
+& \texttt{r-}($\theta$) \\
+
+gamma & \texttt{qgamma}($p$, $\alpha$, $\beta$) 
+& \texttt{d-}($x$, $\alpha$, $\beta$)
+& \texttt{p-}($x$, $\alpha$, $\beta$) 
+& \texttt{r-}($\alpha$, $\beta$) \\
+
+geometric & \texttt{qgeom}($p$, $\theta$) 
+& \texttt{d-}($x$, $\theta$)
+& \texttt{p-}($x$, $\theta$) 
+& \texttt{r-}($\theta$) \\
+
+inversegamma & \texttt{qinvgamma}($p$, $\alpha$, $\beta$) 
+& \texttt{d-}($x$, $\alpha$, $\beta$)
+& \texttt{p-}($x$, $\alpha$, $\beta$) 
+& \texttt{r-}($\alpha$, $\beta$) \\
+
+negative-binomial & \texttt{qnbinom}($p$, $r$, $\theta$) 
+& \texttt{d-}($x$, $r$, $\theta$) 
+& \texttt{p-}($x$, $r$, $\theta$) 
+& \texttt{r-}($r$, $\theta$) \\
+
+normal (univariate) & \texttt{qnorm}($p$, $\theta$, $\sigma$) 
+& \texttt{d-}($x$, $\theta$, $\sigma$)
+& \texttt{p-}($x$, $\theta$, $\sigma$) 
+& \texttt{r-}($\theta$, $\sigma$) \\
+
+%normal (multivariate) & 
+%& \multicolumn{2}{l}{\texttt{dmvnorm}($\x$, $\muvec$, $\bSigma$)} 
+%& \texttt{r-}($\muvec$, $\bSigma$) \\
+
+poisson & \texttt{qpois}($p$, $\theta$) 
+& \texttt{d-}($x$, $\theta$)
+& \texttt{p-}($x$, $\theta$) 
+& \texttt{r-}($\theta$) \\
+
+T (standard) & \texttt{qt}($p$, $\nu$) 
+& \texttt{d-}($x$, $\nu$) 
+& \texttt{p-}($x$, $\nu$)
+& \texttt{r-}($\nu$) \\
+
+%T (nonstandard) & \texttt{qt.scaled}($p$, $\nu$, $\mu$, $\sigma$) 
+%& \texttt{d-}($x$, $\nu$, $\mu$, $\sigma$)
+%& \texttt{p-}($x$, $\nu$, $\mu$, $\sigma$) 
+%& \texttt{r-}($\nu$, $\mu$, $\sigma$) \\
+
+uniform & \texttt{qunif}($p$, $a$, $b$) 
+& \texttt{d-}($x$, $a$, $b$)
+& \texttt{p-}($x$, $a$, $b$) 
+& \texttt{r-}($a$, $b$) \\
+
+
+\end{tabular}
+\caption{Functions from $\texttt{R}$ (in alphabetical order) that can be used on this exam with their arguments. The hyphen in colums 3, 4 and 5 is shorthand notation for the full text of the r.v. which can be found in column 2.
+}
+\label{tab:eqs}
+\end{table}
+
+
+
+\problem Let $\theta$ represent the true probability a specific couple (i.e. a mother and father) will have a male baby. Assume the model $\mathcal{F} = \binomial{n}{\theta}$ where $n$ is the number of children this mother-father couple have.
+
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=1.8in]{family.jpg}
+\end{figure}
+
+\benum
+
+\subquestionwithpoints{6} Describe what the assumption $\mathcal{F}$ means in this real-world context for the couple John and Susan. Indicate what is known/unknown.\spc{6}
+
+\subquestionwithpoints{5} John and Susan do not have any kids yet. Using the principle of indifference, what is a distribution that describes the uncertainty in their $\theta$?\spc{1}
+
+\subquestionwithpoints{6} John and Susan have four kids which are all girls. Assuming the prior in (b), provide the explicit PMF or PDF of the distribution that describes the uncertainty in their $\theta$ after you see the gender of their first four kids. Simplify. \spc{2}
+
+
+\subquestionwithpoints{7} Plot this PMF or PDF (as best as you can) in the space below. It does not have to be drawn to scale but label the axes and important points on the axes. \spc{7}
+
+
+\subquestionwithpoints{6} Assuming the prior in (b) and the data in (c), find all three Bayesian point estimates for John and Susan's $\theta$ and notate them appropriately. Mark them on the plot in (d). \spc{3}
+
+\subquestionwithpoints{4} Assuming the prior in (b) and the data in (c), what is the distribution of $X^*$, the r.v. modeling the gender of John and Susan's fifth child? \spc{1}
+
+
+\subquestionwithpoints{4} Assuming the prior in (b) and the data in (c), what is your best guess (the one that minimizes mean squared error) of the gender of John and Susan's fifth child? \spc{1}
+
+\subquestionwithpoints{10} Assuming the prior in (b) and the data in (c), find a credible region for $\theta$. Notate your answer appropriately. Then estimate where this region would be on your plot in (d) \emph{as best as you can}. \spc{4}
+
+\subquestionwithpoints{10} Assuming the prior in (b) and the data in (c), test the theory that their preference for girl or boy births is uneven \emph{as best as you can}. State the hypotheses clearly using mathematical notation. Find the Bayesian $p_{val}$ if possible.\spc{7}
+
+
+\subquestionwithpoints{5} Although the prior in (b) is reasonable and the data in (c) is very possible, scientists believe the point estimates you found in (e) are too low. They can say this because they examined tons of data from couples before John and Susan. In this case, we can incorporate that prior observation into a new prior:  $\prob{\theta} = \betanot{34}{32}$. Assuming this prior and the data in (c), find all three Bayesian point estimates for John and Susan's $\theta$ and notate them appropriately. Round to two decimal places. \spc{4}
+
+\subquestionwithpoints{5} One of the three Bayesian point estimates in (j) is a \qu{shrinkage estimator}. Which one? Calculate the degree of shrinkage. Round to two decimal places. \spc{1}
+
+
+\subquestionwithpoints{7} Is the prior in (j) \qu{informative} or \qu{uninformative} in context of the data in (c)? Provide mathematical evidence for your answer. \spc{3}
+
+
+\eenum
+
+\problem Consider $\Xoneton \iid \betanot{\theta}{1}$.
+
+\benum
+
+\subquestionwithpoints{6} Find $\mathcal{L}\parens{\theta ; \Xoneton}$. Simplify so that your answer does not include the $B(\cdot,\cdot)$ function or the $\Gamma(\cdot)$ function.\spc{4}
+
+\subquestionwithpoints{4} Find $\loglik{\theta ; \Xoneton}$. Simplify as much as possible.\spc{6}
+
+\subquestionwithpoints{3} Find $\thetahatmle$. \spc{3}
+
+\eenum
+
+\problem Below are some theoretical problems that are independent from each other.
+
+\benum
+
+
+\subquestionwithpoints{6} In the frequentist perspective where no randomness is allowed in $\theta$, prove that $\prob{X} = \cprob{X}{\theta = \theta^*}$ where $\theta^*$ is the true value of $\theta$.\spc{4}
+
+\subquestionwithpoints{6} If $\mathcal{F} = \iid \bernoulli{\theta}$, prove that $\cprob{X_2}{\theta,X_1} = \cprob{X_2}{\theta}$.\spc{6}
+
+
+\subquestionwithpoints{3} [Extra credit] Demonstrate for $H_0 : \theta \leq \theta_0$ or $H_0 : \theta \geq \theta_0$ that $\cprob{X}{H_0} = \oneover{\prob{H_0}} \int_{H_0} \cprob{X}{\theta} \prob{\theta} d\theta$.
+
+\eenum
+
+\end{document}
+
+
+\problem Consider the $\iid$ Bernoulli model if $\theta$ known, $n=2$, $\Theta_0 = \braces{0.5, 0.9}$ and the prior of indifference. Note that $\X$ refers the vector of the $n=2$ random variables.
+
+\benum
+
+\subquestionwithpoints{10} Illustrate the space $\mathcal{\X} \times \Theta$ to scale and properly denoted as we did in class. \spc{16}
+
+
+\eenum
+
+
+\problem Imagine you are a celebrity who has a instagram page where you post photos. This is important to you so you own a business account. Here is typically what you see:
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=2.25in]{instagram.png}
+\end{figure}
+
+\noindent In case you can't read the text in the image, the \qu{reach} is how many unique people viewed your photo post and the \qu{engagement} is the number of people who liked it or commented on it. 
+
+The proportion of engagement : reach is a critical number --- it demonstrates how hooked your audience is. We'll call this $\theta$ going forward and we'll try to estimate it. As of now, we do not have any reason to exclude any values from $\Theta$. 
+
+We'll assume each unique person who visits the post of the photo as an independent Bernoulli trial where 1 represents they engaged with the post and 0 represents that they did not engage.
+
+\benum
+
+\subquestionwithpoints{4} What would the uninformative prior be for $\theta$? \spc{1}
+
+
+\subquestionwithpoints{4} Assume the uninformative prior. Your post just got 10 views but no engagement. What is your best guess of $\theta$ right now using the Bayesian formulation? \spc{0.5}
+
+\subquestionwithpoints{4} You just got another 10 views but no engagement. What is your best guess of $\theta$ right now (at $n=20$) using the Bayesian formulation? \spc{1}
+
+\subquestionwithpoints{4} What is your best guess of $\theta$ right now (at $n=20$) using the Frequentist formulation? \spc{1}
+
+\subquestionwithpoints{4} Why is the Frequentist formulation not realistic? \spc{3}
+
+\subquestionwithpoints{4} After these 20 observations, what is the posterior distribution? Notate it and its distribution correctly below. \spc{1}
+
+\subquestionwithpoints{6} Plot the PDF of the posterior distribution as best as you can. Include important tick marks on both the $x$ and $y$ axes as well as labels for both the $x$ and $y$ axes. \spc{6}
+
+\subquestionwithpoints{6} Create a 98\% credible region for $\theta$. Use notation from Table~\ref{tab:eqs}. \spc{3}
+
+
+\subquestionwithpoints{2} Is the interval you just created also the 98\% HDR? Yes/No. \spc{-0.5}
+
+\subquestionwithpoints{6} What is the unconditional probability of those 20 observations? Answer exactly. \spc{1}
+
+\subquestionwithpoints{4} What is the probability that the engagement proportion is greater than 0.5?  You do not need to evaluate the integral. \spc{2}
+
+\subquestionwithpoints{5} What is the probability that the next viewer will not engage? Use the posterior predictive distribution to answer.\spc{2}
+
+We now use previous posts to build a better prior. If we look at previous $\theta$ estimates, we can fit a $\alpha=17$ and $\beta=245$ beta distribution. Use this as the prior from now on.
+
+\subquestionwithpoints{4} This prior is equivalent to how many pseudo-engagements on the post? \spc{2}
+
+\subquestionwithpoints{4} What is the prior expectation? \spc{2}
+
+\subquestionwithpoints{6} Find $\thetahatmmse$, $\thetahatmae$ and $\thetahatmap$ considering the $n=20$ non-engagements from part (d). \spc{2}
+
+\subquestionwithpoints{4} If we are using $\thetahatmmse$ to estimate $\theta$, calculate $\rho$, the shrinkage proportion. Round to the nearest percent. \spc{2}
+
+
+\subquestionwithpoints{4} Does the shrinkage indicate a \emph{strong} prior? Yes / no. \spc{-0.5}
+
+\subquestionwithpoints{6} Create a 95\% credible region for the probability of \emph{not engaging}. \spc{5}
+
+\eenum
+
+\problem These are purely theoretical exercises.
+
+\benum
+
+
+\subquestionwithpoints{5} Prove $B(1,1) = 1$ from first principles. \spc{6}
+
+\subquestionwithpoints{4} If $\Gamma(\half) = \sqrt{\pi}$, compute $\Gamma(\frac{7}{2})$ to the nearest 2 digits. \spc{4}
+\eenum
+
+\end{document}
+
+
+
+\problem This question continues our discussion about extrasensory perception. A famous series of experiments called the Ganzfeld experiments work as follows. A human subject called the \qu{receiver} sits in a room in darkness with their eyes covered and with headphones to filter out any noise. An example subject is pictured below:
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=2in]{Ganzfeld.jpg}
+\end{figure}
+
+\noindent Another human subject called the transmitter sits in another room. In the beginning of the experiment, the transmitter is shown an image. The transmitter than tries to \qu{telephathically transmit} the image to the receiver. At the conclusion of the experiment, the receiver is shown four images --- three decoys and the true image the transmitter was given --- and is asked to choose one. If the receiver chooses the true image, this is termed a \qu{hit}.
+
+\benum
+
+\subquestionwithpoints{4} Under the null hypothesis of \qu{no ESP}, the receiver chooses one image randomly from four images where one image make the \qu{hit}. Create a r.v. $X$ for the \qu{hit} under the null. Indicate the type of r.v. and the value of $\theta$. \spc{2}
+
+\subquestionwithpoints{5} A psychic claims that his ability to identify the target image is 50\%. Create a prior on both the null $\theta$ and the psychic's claimed $\theta$. Use the principle of indifference.\spc{1}
+
+
+\subquestionwithpoints{7} We run three independent experimental trials of which the psychic gets two of the three correct. Calculate $\prob{X}$.   \spc{5}
+
+
+\subquestionwithpoints{6} Find the probability that the psychic's assessment of his abilities is correct given this data. \spc{5}
+
+
+\subquestionwithpoints{7} Calculate the probability the next experiment for this psychic (i.e. the fourth, unobserved experiment) will be a \qu{hit}. \spc{5}
+
+
+
+\subquestionwithpoints{6} We now put a uniform prior on $\theta$ across all values in the support. Find the probability that this psychic has \qu{better than normal} abilities given the data. You are free to leave your answer in notation from Table~\ref{tab:eqs}. \spc{2}
+
+
+\subquestionwithpoints{5} Instead of a uniform prior, you want to factor in what you've seen previously. You figure your prior experience is worth 18 trials and you haven't seen any evidence of ESP in those trials. Using the conjugate prior we discussed in class, what is the prior for $\theta$ now? \spc{1}
+
+\subquestionwithpoints{7} Illustrate this prior the best you can. No need for perfect scale. Make sure to label axes appropriately. \spc{10}
+
+\subquestionwithpoints{4} Compute the prior mean. \spc{2}
+
+\subquestionwithpoints{5} Given this prior and the data, calculate the shrinkage proportion towards $\expe{\theta}$ if you were to use $\thetahatmmse$ for your point estimation strategy. \spc{1}
+
+
+\subquestionwithpoints{5} If there was a lot of data, what would be the influence of the prior on the point estimate of $\theta$? Try to use only one word. \spc{0}
+
+\subquestionwithpoints{6} Given this prior and the data, fill in the following boxes with only the following symbols: $<, ~\leq, ~>, ~\geq, ~=$ to indicate the numerical relationships.\vspace{-0.4cm}
+
+\beqn
+\thetahatmap~~\framebox(20,20){}~~ \thetahatmmse, \quad \thetahatmae~~\framebox(20,20){}~~ \thetahatmmse, \quad \thetahatmap~~\framebox(20,20){}~~ \thetahatmae
+\eeqn
+
+\subquestionwithpoints{10} In 2010, Lance Storm, Patrizio Tressoldi, and Lorenzo Di Risio analyzed 29 ganzfeld studies from 1997 to 2008 amassing data on 1,498 trials with different receiver and transmitter subjects. Of the 1,498 trials, 483 were hits. Test the existence of ESP in the Ganzfeld experiments using the Frequentist (i.e. the \textit{non-Bayesian}) two-sided test. You must (1) write your hypotheses clearly, (2) choose your own significance level and (3) state clearly the conclusion of the test.\spc{7}
+
+
+\subquestionwithpoints{4} Using the Storm et al. (2010) Ganzfeld data and a uniform prior, create a 95\% credible region for $\theta$. You are free to leave your answer in notation from Table~\ref{tab:eqs}. \spc{2}
+
+\subquestionwithpoints{4} Describe in one sentence how you would use the answer from the previous question to test the existence of ESP in the Storm et al. (2010) Ganzfeld data using one of the Bayesian two-sided hypothesis test strategies discussed in class.\spc{2}
+
+\subquestionwithpoints{10} Assess the evidence for the ESP phenomenon in the Ganzfeld experiments using Bayes Factors. You will not be able to solve for $B$ numerically but you need to get as far as you can. 5 points extra credit if you can solve numerically and interpret your result. You can use $\natlog{n!} \approx n\natlog{n} - n + 1$. \spc{8}
+
+
+\eenum
+
+\problem This is a theoretical question.
+
+\benum
+\subquestionwithpoints{5} Consider the case of assessing the evidence of $\theta_a$ versus $\theta_0$. Show that $B$ is the odds ratio of the posterior odds to the prior odds.
+
+\eenum
+
+\end{document}
+%-------------------------------------------------------
+
+\problem This question is ironically about theory of testing.
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=4in]{examination.jpg}
+\end{figure}
+
+\noindent Every hitter's \emph{sample} batting average (BA) is defined as:
+
+\beqn
+BA := \frac{\text{sample \# of hits}}{\text{sample \# of at bats}}
+\eeqn
+
+In this problem we care about estimating a hitter's \emph{true} batting average which we call $\theta$. Each player has a different $\theta$ but we focus in this problem on one specific player. In order to estimate the player's true batting average, we use the sample batting average as defined above. 
+
+\benum
+\subquestionwithpoints{2} For the remainder of the problem, we assume that each at bat (for any player) are \emph{conditionally} $\iid$ based on the players' true batting average, $\theta$. So if a player has $n$ at bats, then each successful hit in each at bat can be modeled via
+
+\beqn
+X_1~|~\theta, ~X_2~|~\theta, \ldots, ~X_n~|~\theta \iid \bernoulli{\theta}.
+\eeqn
+
+Under this model above, if the player had $n=4$ at bats, would the $\prob{X_3,X_2,X_4,X_1}$ be equal to the $\prob{X_1,X_2,X_3,X_4}$? Yes / no. \spc{1}
+
+\subquestionwithpoints{3} If the player had $n=4$ at bats and $\sum_{i=0}^n x_i=0$ hits, compute $\thetahatmle$.\spc{2}
+
+\subquestionwithpoints{4} Compute a frequentist confidence interval for $\theta$ given the data in (b).\spc{2}
+
+
+\subquestionwithpoints{3} Describe in English the main problem with the interval in (c).\spc{2}
+
+\subquestionwithpoints{2} Set the following prior: $\theta \sim \stduniform$. Is this an informative prior for the true batting average? Yes/no \spc{1}
+
+\subquestionwithpoints{5} Given the prior in (e) and the data in (b), find the posterior distribution of this player's true batting average.\spc{3}
+
+\subquestionwithpoints{3} Based on your posterior distribution in (f), give your best estimate to the value of $\theta$ which minimizes squared error loss.\spc{3}
+
+\subquestionwithpoints{2} Based on your posterior distribution in (f), describe using an integral or \texttt{R}-language expression your best estimate to the value of $\theta$ which minimizes absolute error loss but do not compute.\spc{4}
+
+\subquestionwithpoints{4} Based on your posterior distribution in (f), give your best estimate to the value of $\theta$ using the posterior mode.\spc{2}
+
+\subquestionwithpoints{5} Find an integral expression for the probability this hitter bats above a 300 batting average (which means the true batting average is 0.3 or greater). Do not compute. \spc{2}
+
+\subquestionwithpoints{5} Assuming you have access to \texttt{R} and its function \texttt{qbeta}, give the 95\% credible region for $\theta$. The three arguments for \texttt{qbeta} are (1) quantile (2) alpha and (3) beta. Then, provide an interpretation for this interval. \spc{2}
+
+\subquestionwithpoints{3} What would the Jeffrey's prior be in our model situation described in (a)? \spc{1}
+
+\subquestionwithpoints{2} Would the posterior under the Haldane prior be proper given the data in (b)? Yes / No. \spc{0.5}
+
+\subquestionwithpoints{5} The batting average is \textit{only} measured as the batting average and never logged or transformed. Would there be any value in using the Jeffrey's prior instead of the prior in (e)? Discuss. \spc{5}
+
+
+\subquestionwithpoints{5} Looking at the entire dataset for 6,061 batters who had 100 or more at bats, I fit a beta function to the sample batting averages and estimated $\alpha = 42.3$ and $\beta = 127.7$ (which we called \qu{empirical Bayes} estimates in class). Consider building a prior from this estimate as
+
+\beqn
+\theta \sim \betanot{42.3}{127.7}.
+\eeqn
+
+Would a prior based on these hyperparameter estimates be \qu{objective}? Yes / No. Why? \spc{3}
+
+\subquestionwithpoints{2} Is the prior from (o) considered a \qu{conjugate prior}? Yes / No.\spc{0.5}
+
+\subquestionwithpoints{3} Using the prior from (o), find the $\thetahatmmse$ without considering the data whatsoever. Round to 3 digits. \spc{3}
+
+\subquestionwithpoints{4} Using the prior from (o) and the data from (b), find the posterior $\thetahatmmse$. Round to 3 digits. \spc{2}
+
+\subquestionwithpoints{5} The posterior estimate from (q) is different from the frequentist estimate in (b) due to shrinkage. What is the proportion of shrinkage for the posterior estimate in (q)? We denoted this as $\rho$ in class. Round to 3 digits. \spc{3}
+
+\subquestionwithpoints{4} [Extra Credit] Using the Bayesian CLT, compute a 95\% credible region for $\theta$ for the data in (b) and the prior in (o). Round to 3 digits. \spc{3}
+
+\subquestionwithpoints{3} Based on the data in (b) and the prior in (o), what is the probability this batter gets a hit on his next at bat? \spc{3}
+
+\subquestionwithpoints{5} Based on the data in (b) and the prior in (o), write an exact expression for the batter getting 14 or more hits on the next 20 at bats. You can leave your answer in terms of the beta function. Do not compute explicitly. \spc{5}
+
+\subquestionwithpoints{6} Based on the data in (b) and the prior in (o), find the kernel of the distribution for the number of hits this batter gets in the next $m$ at bats. Partial credit is given. \spc{3}
+
+\subquestionwithpoints{2} Based on the data in (b) and the prior in (o), the joint posterior predictive distribution for $n=4$ looks like as follows. 
+
+%library(VGAM)
+%barplot(dbetabinom.ab(0 : 4, 4, shape1 = 42.3 + 0, shape2 = 127.7 + 4), names = 0 : 4, xlab = "X* (# hits)", ylab = "prob(X*|X)")
+\begin{figure}[htp]
+\centering
+\includegraphics[width=3.0in]{post_pred.pdf}
+\end{figure}
+
+Does the data from (b) look abnormal for this model? Yes / no. \spc{0.5}
+
+\subquestionwithpoints{7} Test the following hypotheses by finding an integral or \texttt{R}-language expression for the Bayesian $p$-val for the data in (b) and prior in (o):
+
+\beqn
+&& H_0: \theta \geq \theta_0 \\
+&& H_a: \theta < \theta_0
+\eeqn
+
+where $\theta_0 = \expe{\theta}$. That is, we're testing if this batter is truly \qu{below-average} as compared to the 6,061 career major league baseball players from the official dataset.\spc{8}
+
+\subquestionwithpoints{7} Write an integral or \texttt{R}-language expression for $K$, the Bayes Factor in favor of $H_a$.\spc{9}
+
+\subquestionwithpoints{3} For the model in (a), specify $\mathcal{F}$ (the likelihood model) of a hit at a single at bat. \spc{3}
+
+\subquestionwithpoints{3} [Extra credit] For the the data in (b) and prior in (o), compute $\expesub{X}{\cexpesub{\theta}{\theta}{X}}$ using the Law of Iterated Expectation. \spc{2}
+
+\subquestionwithpoints{3} [Extra credit] For the data in (b), what is the frequentist predictive distribution?
+
+\eenum
+
+\end{document}
