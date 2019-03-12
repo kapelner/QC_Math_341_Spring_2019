@@ -20,8 +20,8 @@ My lectures can be listened to as youtube tracks [(all lectures)](https://www.yo
 * Lecture 13 [(audio)](https://youtu.be/Qs9UKbIrYTM) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec13figueroa.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec13kap.pdf) 
 * Lecture 12 [(audio)](https://youtu.be/INvCaiVR_dg) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec12figueroa.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec12kap.pdf)
 * Lecture 11 [(audio)](https://youtu.be/g6eCkB-5I6I) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec11figueroa.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec11kap.pdf)-->
-* Lecture 10 [(audio)](https://youtu.be/) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec10kap.pdf)
-* Lecture 9 [(audio)](https://youtu.be/) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec09kap.pdf)
+* Lecture 10 [(audio)](https://youtu.be/K2xdXXRqr2c) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec10kap.pdf)
+* Lecture 9 [(audio)](https://youtu.be/UhBZS5K5H9c) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec09kap.pdf)
 * Lecture 8 [(audio)](https://youtu.be/641RhXxzIUA) [(Isaac Gordon)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec08gordon.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec08kap.pdf)
 * Lecture 7 [(audio)](https://youtu.be/hiZxhFk0w8I) [(Isaac Gordon)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec07gordon.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec07kap.pdf)
 * Lecture 6 [(audio)](https://youtu.be/qUKaGNJ1xDY) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec06kap.pdf)
