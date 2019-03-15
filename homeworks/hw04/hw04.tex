@@ -1,0 +1,193 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\newtoggle{professormode}
+\toggletrue{professormode} %STUDENTS: DELETE or COMMENT this line
+
+
+
+\title{MATH 341 / 650.3 Spring 2019 Homework \#4}
+
+\author{Professor Adam Kapelner} %STUDENTS: write your name here
+
+\iftoggle{professormode}{
+\date{Due in KY604, Monday 11:59PM, March 25, 2019 \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
+}
+
+\renewcommand{\abstractname}{Instructions and Philosophy}
+
+\begin{document}
+\maketitle
+
+\iftoggle{professormode}{
+\begin{abstract}
+The path to success in this class is to do many problems. Unlike other courses, exclusively doing reading(s) will not help. Coming to lecture is akin to watching workout videos; thinking about and solving problems on your own is the actual ``working out.''  Feel free to \qu{work out} with others; \textbf{I want you to work on this in groups.}
+
+Reading is still \textit{required}. For this homework set, read about the beta-binomial model, conjugacy, the posterior predictive distribution, informative priors, empirical Bayes, Fisher Information, Jeffrey's priors, kernels and read chapters 8-11 in McGrayne.
+
+The problems below are color coded: \ingreen{green} problems are considered \textit{easy} and marked \qu{[easy]}; \inorange{yellow} problems are considered \textit{intermediate} and marked \qu{[harder]}, \inred{red} problems are considered \textit{difficult} and marked \qu{[difficult]} and \inpurple{purple} problems are extra credit. The \textit{easy} problems are intended to be ``giveaways'' if you went to class. Do as much as you can of the others; I expect you to at least attempt the \textit{difficult} problems. 
+
+Problems marked \qu{[MA]} are for the masters students only (those enrolled in the 650.3 course). For those in 341, doing these questions will count as extra credit.
+
+This homework is worth 100 points but the point distribution will not be determined until after the due date. See syllabus for the policy on late homework.
+
+Up to 10 points are given as a bonus if the homework is typed using \LaTeX. Links to instaling \LaTeX~and program for compiling \LaTeX~is found on the syllabus. You are encouraged to use \url{overleaf.com}. If you are handing in homework this way, read the comments in the code; there are two lines to comment out and you should replace my name with yours and write your section. The easiest way to use overleaf is to copy the raw text from hwxx.tex and preamble.tex into two new overleaf tex files with the same name. If you are asked to make drawings, you can take a picture of your handwritten drawing and insert them as figures or leave space using the \qu{$\backslash$vspace} command and draw them in after printing or attach them stapled.
+
+The document is available with spaces for you to write your answers. If not using \LaTeX, print this document and write in your answers. I do not accept homeworks which are \textit{not} on this printout. Keep this first page printed for your records.
+
+\end{abstract}
+
+\thispagestyle{empty}
+\vspace{1cm}
+NAME: \line(1,0){380}
+\clearpage
+}
+
+\problem{These are questions about McGrayne's book, chapters 8-10.}
+
+\begin{enumerate}
+
+\easysubproblem{When was experimentation introduced to medical science and who introduced it? Are you surprised that it was this recent?}\spc{1}
+
+\easysubproblem{Sir Ronald A. Fisher, the founder of modern experiments, did not believe cigarettes caused lung cancer. What were his two hypotheses for the cause of lung cancer?}\spc{2}
+
+\easysubproblem{Who invented, and what are Bayes Factors? (p116)}\spc{2}
+
+\easysubproblem{Trick question: who convinced Cornfield to stop smoking?}\spc{2}
+
+\easysubproblem{Why were frequentists at a loss to estimate the probability of a nuclear bomb being detonated by accident?}\spc{2}
+
+\easysubproblem{What is \href{https://en.wikipedia.org/wiki/Cromwell\%27s_rule}{Cromwell's Rule}? And, when applying this principle to a Bayesian model what would it imply? (See the Wikipedia link and p123).}\spc{2}
+
+\easysubproblem{Did Bayesian Statistics prevent nuclear accidents? Discuss.}\spc{5}
+
+\easysubproblem{What is the main reason why there are so many variations of Bayesian interpretation? (p129)}\spc{4}
+
+\easysubproblem{What is a large practical drawback of Bayesian inference? (See mid-end of chapter 8).}\spc{9}
+
+\end{enumerate}
+
+
+\problem{Some quick question on mixture distributions.}
+
+\begin{enumerate}
+
+\easysubproblem{If $X$ is independent to $W$ and $X$ is independent to $Z$ and $X$ is independent to $U$, can you write $\cprob{X}{U,V,W,Y,Z}$ more compactly? Do so below.}\spc{1}
+
+\easysubproblem{Let $X$ be $\normnot{0}{1^2}$ 1/3 of the time and $\exponential{3}$ 2/3 of the time. What is its pdf?}\spc{2}
+
+
+\hardsubproblem{Let's say $X~|~\beta \sim \betanot{1}{\beta}$ where $\beta~|~\lambda \sim \exponential{\lambda}$. Write an integral expression which when solved, finds the compound / marginal density of $X$. DO NOT solve.}\spc{6}
+
+\hardsubproblem{[MA] Let's say $X~|~\theta,~\sigsq \sim \normnot{\theta}{\sigsq}$ where $\theta~|~\mu_0,~\tausq \sim \normnot{\mu_0}{\tausq}$. Write an integral expression which when solved, finds the compound / marginal density of $X$. DO NOT solve.}\spc{4}
+
+\end{enumerate}
+
+
+
+
+
+\problem{These are questions about other vague priors: improper priors and Jeffreys priors.}
+
+\begin{enumerate}
+
+\easysubproblem{What is an improper prior?}\spc{2}
+
+\easysubproblem{Is $\theta \sim \betanot{100}{0}$ improper? Yes / no and provide a proof.}\spc{4}
+
+\easysubproblem{When are improper priors \qu{legal}?}\spc{2}
+
+\easysubproblem{When are improper priors \qu{illegal}?}\spc{2}
+
+\hardsubproblem{What does $I(\theta)$ tell you about the random variable with respect to its parameter $\theta$?}\spc{5}
+
+\intermediatesubproblem{If I compute a posterior on the $\theta$ scale and then measure the parameter on another scale, will I (generally) get the same posterior probability? Yes/no explain.}\spc{4}
+
+
+\easysubproblem{What is the Jeffrey's prior for $\theta$ under the binomial likelihood? Your answer must be a distribution.}\spc{4}
+
+\hardsubproblem{What is the Jeffrey's prior for $\theta = t^{-1}(r) = \frac{e^r}{1 + e^r}$ (i.e. the log-odds reparameterization) under the binomial likelihood?}\spc{6}
+
+
+\hardsubproblem{Explain the advantage of Jeffrey's prior.}\spc{12}
+
+\hardsubproblem{[MA] Prove Jeffrey's invariance principle i.e. prove that the Jeffrey's prior makes your prior probability immune to transformations. Use the second proof from class.}\spc{12}
+
+\end{enumerate}
+
+
+\problem{This question is about \qu{batting averages} in baseball.
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=3.8in]{baseball.jpg}
+\end{figure}
+
+\noindent Every hitter's \emph{sample} batting average (BA) is defined as:
+
+\beqn
+BA := \frac{\text{sample \# of hits}}{\text{sample \# of at bats}}
+\eeqn
+
+In this problem we care about estimating a hitter's \emph{true} batting average which we call $\theta$. Each player has a different $\theta$ but we focus in this problem on one specific player. In order to estimate the player's true batting average, we make use of the sample batting average as defined above (with Bayesian modifications, of course). 
+
+We assume that each at bat (for any player) are conditionally $\iid$ based on the players' true batting average, $\theta$. So if a player has $n$ at bats, then each successful hit in each at bat can be modeled via $X_1~|~\theta, ~X_2~|~\theta, \ldots, ~X_n~|~\theta \iid \bernoulli{\theta}$ i.e. the standard assumption.}
+
+\begin{enumerate}
+
+\easysubproblem{Looking at the entire dataset for 6,061 batters who had 100 or more at bats, I fit the beta distribution PDF to the sample batting averages using the maximum likelihood approach and I'm estimating $\alpha = 42.3$ and $\beta = 127.7$ (which we will call the \qu{empirical Bayes} estimates in class). Consider building a prior from this estimate as $\theta \sim \betanot{42.3}{127.7}$ Would a prior based on these hyperparameter estimates be \qu{objective}? Yes / No. Why?}\spc{1}
+
+\easysubproblem{Using prior data to build the prior is called...}\spc{0}
+
+\easysubproblem{Is the prior from (a) considered a \qu{conjugate prior}? Yes / No.}\spc{0}
+
+\easysubproblem{Using the prior from (a), find the $\thetahatmmse$.}\spc{0.5}
+
+\hardsubproblem{We now observe four at bats for a new player and there were no hits. Write an exact expression for the batter getting 10 hits on the next 20 at bats. You can leave your answer in terms of the beta function. Do not compute explicitly.} \spc{5}
+
+\hardsubproblem{We now observe four at bats for a new player and there were no hits. Write an exact expression for the batter getting 14 or more hits on the next 20 at bats. You can leave your answer in terms of the beta function. Do not compute explicitly.} \spc{5}
+
+\end{enumerate}
+
+\problem{We will now have lots of examples finding kernels from common distributions. Some of these questions are silly, but they will force you to think hard about what the kernel is under different situations. And... they're fun! Probabilistic pyromania!}
+
+\begin{enumerate}
+
+\easysubproblem{What is the kernel of $X~|~\theta,~n \sim \binomial{n}{\theta}$?}\spc{3}
+
+\hardsubproblem{What is the kernel of $X, n~|~\theta \sim \binomial{n}{\theta}$? Be careful...}\spc{3}
+
+
+\easysubproblem{What is the kernel of $X~|~\alpha,~\beta \sim \betabinomial{n}{\alpha}{\beta}$?}\spc{3}
+
+\easysubproblem{What is the kernel of $X~|~\theta \sim \poisson{\theta} := \frac{e^{-\theta}\theta^x}{x!}$?}\spc{3}
+
+\hardsubproblem{What is the kernel of $\theta~|~X \sim \poisson{\theta}$? Be careful...}\spc{3}
+
+\easysubproblem{What is the kernel of $X~|~\alpha,~\beta \sim \stdbetanot$?}\spc{4}
+
+\easysubproblem{What is the kernel of $X~|~\theta \sim \exponential{\theta} := \theta e^{-\theta x}$? This is the exponential distribution.}\spc{4}
+
+\easysubproblem{What is the kernel of $X~|~\theta,~\sigsq \sim \normnot{\theta}{\sigsq}$?}\spc{4}
+
+\hardsubproblem{What is the kernel of $\theta,~\sigsq~|~X \sim \normnot{\theta}{\sigsq}$? Be careful...}\spc{4}
+
+
+\easysubproblem{What is the kernel of $X~|~k \sim \chisq{k} := {\displaystyle {\frac {1}{2^{k/2}\Gamma (k/2)}}\;x^{k/2-1}e^{-x/2}\;}$, the chi-squared distribution with $k$ degrees of freedom?}\spc{4}
+
+\intermediatesubproblem{What is the kernel of 
+
+\beqn
+X~|~N,~\theta,~n \sim \hypergeometric{N}{\theta}{n} := {{{ \theta \choose x} {{N-\theta} \choose {n-x}}}\over {N \choose n}}
+\eeqn
+
+where $N$ is the number of total balls in the bag, $\theta$ is the number of success balls in the bag and $n$ is the number drawn out of the bag?}\spc{9}
+
+%\hardsubproblem{[MA] If $X~|~\theta,~\sigsq \sim \normnot{\theta}{\sigsq}$ and $\theta~|~\mu_0,~\tausq \sim \normnot{\mu_0}{\tausq}$, what is the kernel of $\theta~|~X,~\sigsq,~\mu_0,~\tausq$?}\spc{6}
+
+\end{enumerate}
+
+
+\end{document}
+
