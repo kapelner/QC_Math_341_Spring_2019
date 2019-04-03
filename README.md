@@ -13,10 +13,10 @@ My lectures can be listened to as youtube tracks [(all lectures)](https://www.yo
 * Lecture 20 [(audio)](https://youtu.be/44CEVtBkOI8) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec20figueroa.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec20kap.pdf)
 * Lecture 19 [(audio)](https://youtu.be/jARnb1LfaPE) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec19figueroa.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec19kap.pdf)
 * Lecture 18 [(audio)](https://youtu.be/yCFKvxc3BuM) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec18figueroa.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec18kap.pdf)
-* Lecture 17 [(audio)](https://youtu.be/FVpD1EExmug) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec17figueroa.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec17kap.pdf)
-* Lecture 16 [(audio)](https://youtu.be/rCla-CAmSlg) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec16figueroa.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec16kap.pdf)  
-* Lecture 15 [(audio)](https://youtu.be/B5ILu8dH43I) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec15figueroa.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec15kap.pdf)
-* Lecture 14 [(audio)](https://youtu.be/3tG25Y6sCyE) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec14figueroa.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec14kap.pdf)--> 
+* Lecture 17 [(audio)](https://youtu.be/FVpD1EExmug) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec17figueroa.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec17kap.pdf) -->  
+* Lecture 16 [(audio)](https://youtu.be/NoUyK0ex8KA) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec16kap.pdf)
+* Lecture 15 [(audio)](https://youtu.be/u69vd8-_xFI) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec15kap.pdf)
+* Lecture 14 [(audio)](https://youtu.be/_0DSEAL8Xgw) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec14kap.pdf)
 * Lecture 13 [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec13kap.pdf)
 * Lecture 12 [(audio)](https://youtu.be/adIfkLFheNA) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec12kap.pdf)
 * Lecture 11 [(audio)](https://youtu.be/KWPuJh8eezU) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec11kap.pdf)
@@ -48,9 +48,9 @@ My lectures can be listened to as youtube tracks [(all lectures)](https://www.yo
 
 * Midterm I Tues, March 5 (in class, KY283). [(exam)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/exams/midterm1/midterm1.pdf) [(solutions)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/exams/midterm1/midterm1_solutions.pdf)
 
-* Midterm II Thurs, April 11 (in class, KY283).
+* Midterm II Thurs, April 16 (in class, KY283).
 
-* Final Wednesday, May ?? 8:30-10:30AM (in class, KY283)
+* Final Wednesday, May 16 8:30-10:30AM (in class, KY283)
 
 ## Practice Exams
 
