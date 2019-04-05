@@ -1,0 +1,292 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\newtoggle{professormode}
+\toggletrue{professormode} %STUDENTS: DELETE or COMMENT this line
+
+
+
+\title{MATH 341 / 650.3 Spring 2019 Homework \#5}
+
+\author{Professor Adam Kapelner} %STUDENTS: write your name here
+
+\iftoggle{professormode}{
+\date{Due in KY604, Wednesday 11:59PM, April 17, 2019 \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
+}
+
+\renewcommand{\abstractname}{Instructions and Philosophy}
+
+\begin{document}
+\maketitle
+
+\iftoggle{professormode}{
+\begin{abstract}
+The path to success in this class is to do many problems. Unlike other courses, exclusively doing reading(s) will not help. Coming to lecture is akin to watching workout videos; thinking about and solving problems on your own is the actual ``working out.''  Feel free to \qu{work out} with others; \textbf{I want you to work on this in groups.}
+
+Reading is still \textit{required}. For this homework set, read about the Geometric-Poisson conjugate model with negative binomial posterior predictive distribution, the normal-normal model for mean inference with normal posterior predictive distribution and the inverse gamma-normal model for variance inference with non-standard Student's $t$ posterior predictive distribution.
+
+The problems below are color coded: \ingreen{green} problems are considered \textit{easy} and marked \qu{[easy]}; \inorange{yellow} problems are considered \textit{intermediate} and marked \qu{[harder]}, \inred{red} problems are considered \textit{difficult} and marked \qu{[difficult]} and \inpurple{purple} problems are extra credit. The \textit{easy} problems are intended to be ``giveaways'' if you went to class. Do as much as you can of the others; I expect you to attempt the \textit{difficult} problems. 
+
+Problems marked \qu{[MA]} are for the masters students only (those enrolled in the 650.3 course). For those in 341, doing these questions will count as extra credit.
+
+This homework is worth 100 points but the point distribution will not be determined until after the due date. See syllabus for the policy on late homework.
+
+Up to 10 points are given as a bonus if the homework is typed using \LaTeX. Links to instaling \LaTeX~and program for compiling \LaTeX~is found on the syllabus. You are encouraged to use \url{overleaf.com}. If you are handing in homework this way, read the comments in the code; there are two lines to comment out and you should replace my name with yours and write your section. The easiest way to use overleaf is to copy the raw text from hwxx.tex and preamble.tex into two new overleaf tex files with the same name. If you are asked to make drawings, you can take a picture of your handwritten drawing and insert them as figures or leave space using the \qu{$\backslash$vspace} command and draw them in after printing or attach them stapled.
+
+The document is available with spaces for you to write your answers. If not using \LaTeX, print this document and write in your answers. I do not accept homeworks which are \textit{not} on this printout. Keep this first page printed for your records.
+
+\end{abstract}
+
+\thispagestyle{empty}
+\vspace{1cm}
+NAME: \line(1,0){380}
+\clearpage
+}
+
+\begin{table}[htp]
+\centering
+\small
+\begin{tabular}{l | llll}
+Distribution                  & Quantile  & PMF / PDF  &CDF       & Sampling  \\ 
+of r.v. &  Function & function         & function &  Function \\ \hline
+beta & \texttt{qbeta}($p$, $\alpha$, $\beta$)             
+& \texttt{d-}($x$, $\alpha$, $\beta$)
+& \texttt{p-}($x$, $\alpha$, $\beta$) 
+& \texttt{r-}($\alpha$, $\beta$) \\
+betabinomial & \texttt{qbetabinom}($p$, $n$, $\alpha$, $\beta$)              
+& \texttt{d-}($x$, $n$, $\alpha$, $\beta$)
+& \texttt{p-}($x$, $n$, $\alpha$, $\beta$) 
+& \texttt{r-}($n$, $\alpha$, $\beta$) \\
+
+%betanegativebinomial & \texttt{qbeta\_nbinom}($p$, $r$, $\alpha$, $\beta$) 
+%& \texttt{d-}($x$, $r$, $\alpha$, $\beta$)
+%& \texttt{p-}($x$, $r$, $\alpha$, $\beta$) 
+%& \texttt{r-}($r$, $\alpha$, $\beta$) \\
+
+binomial & \texttt{qbinom}($p$, $n$, $\theta$) 
+& \texttt{d-}($x$, $n$, $\theta$)
+& \texttt{p-}($x$, $n$, $\theta$) 
+& \texttt{r-}($n$, $\theta$) \\
+
+exponential & \texttt{qexp}($p$, $\theta$) 
+& \texttt{d-}($x$, $\theta$) 
+& \texttt{p-}($x$, $\theta$) 
+& \texttt{r-}($\theta$) \\
+
+gamma & \texttt{qgamma}($p$, $\alpha$, $\beta$) 
+& \texttt{d-}($x$, $\alpha$, $\beta$)
+& \texttt{p-}($x$, $\alpha$, $\beta$) 
+& \texttt{r-}($\alpha$, $\beta$) \\
+
+%geometric & \texttt{qgeom}($p$, $\theta$) 
+%& \texttt{d-}($x$, $\theta$)
+%& \texttt{p-}($x$, $\theta$) 
+%& \texttt{r-}($\theta$) \\
+
+inversegamma & \texttt{qinvgamma}($p$, $\alpha$, $\beta$) 
+& \texttt{d-}($x$, $\alpha$, $\beta$)
+& \texttt{p-}($x$, $\alpha$, $\beta$) 
+& \texttt{r-}($\alpha$, $\beta$) \\
+
+negative-binomial & \texttt{qnbinom}($p$, $r$, $\theta$) 
+& \texttt{d-}($x$, $r$, $\theta$) 
+& \texttt{p-}($x$, $r$, $\theta$) 
+& \texttt{r-}($r$, $\theta$) \\
+
+normal (univariate) & \texttt{qnorm}($p$, $\theta$, $\sigma$) 
+& \texttt{d-}($x$, $\theta$, $\sigma$)
+& \texttt{p-}($x$, $\theta$, $\sigma$) 
+& \texttt{r-}($\theta$, $\sigma$) \\
+
+%normal (multivariate) & 
+%& \multicolumn{2}{l}{\texttt{dmvnorm}($\x$, $\muvec$, $\bSigma$)} 
+%& \texttt{r-}($\muvec$, $\bSigma$) \\
+
+poisson & \texttt{qpois}($p$, $\theta$) 
+& \texttt{d-}($x$, $\theta$)
+& \texttt{p-}($x$, $\theta$) 
+& \texttt{r-}($\theta$) \\
+
+T (standard) & \texttt{qt}($p$, $\nu$) 
+& \texttt{d-}($x$, $\nu$) 
+& \texttt{p-}($x$, $\nu$)
+& \texttt{r-}($\nu$) \\
+
+T (nonstandard) & \texttt{qt.scaled}($p$, $\nu$, $\mu$, $\sigma$) 
+& \texttt{d-}($x$, $\nu$, $\mu$, $\sigma$)
+& \texttt{p-}($x$, $\nu$, $\mu$, $\sigma$) 
+& \texttt{r-}($\nu$, $\mu$, $\sigma$) \\
+
+uniform & \texttt{qunif}($p$, $a$, $b$) 
+& \texttt{d-}($x$, $a$, $b$)
+& \texttt{p-}($x$, $a$, $b$) 
+& \texttt{r-}($a$, $b$) \\
+
+
+\end{tabular}
+\caption{Functions from $\texttt{R}$ (in alphabetical order) that can be used on this assignment and exams. The hyphen in colums 3, 4 and 5 is shorthand notation for the full text of the r.v. which can be found in column 2.
+}
+\label{tab:eqs}
+\end{table}
+
+
+
+
+\problem{We will ask some basic problems on the Gamma-Poisson conjugate model.}
+
+\begin{enumerate}
+
+\easysubproblem{If $X \sim \poisson{\theta}$ and prior $\prob{\theta}$, what is the kernel of the posterior? Leave the prior in as \qu{$\prob{\theta}$}.}\spc{4}
+
+\easysubproblem{Write the PDF of $\theta$ which is the gamma distribution with the standard hyperparameters we used in class.}\spc{2}
+
+\easysubproblem{What is the support and parameter space?}\spc{2}
+
+\easysubproblem{What is the expectation and standard error and mode?}\spc{2}
+
+
+\easysubproblem{Draw four different pictures of different hyperparameter combinations to demonstrate this model's flexibility}\spc{10}
+
+
+\intermediatesubproblem{Prove that the Poisson likelihood for $n=1$ with a gamma prior yields a gamma posterior and find its parameters.}\spc{4}
+
+\intermediatesubproblem{Prove that the Poisson likelihood for $n$ observations with a gamma prior yields a gamma posterior and find its parameters.}\spc{8}
+
+\intermediatesubproblem{For the Poisson likelihood for $n$ observations with a gamma prior find $\thetahatmmse$, $\thetahatmae$ and $\thetahatmap$.}\spc{2}
+
+\intermediatesubproblem{[MA] Demonstrate that $\thetahatmmse$ is a shrinkage estimator and find $\rho$.}\spc{4}
+
+\intermediatesubproblem{Demonstrate that $\prob{\theta} \propto 1$ is improper.}\spc{2}
+
+\easysubproblem{[MA] Demonstrate that $\prob{\theta} \propto 1$ can be created by using an improper Gamma distribution (i.e. a Gamma distribution with parameters that are not technically in its parameter space and thereby does not admit a distribution function).}\spc{2}
+
+\easysubproblem{What is the Jeffrey's prior for the Poisson likelihood model? Do not rederive. Just copy.}\spc{2}
+
+\easysubproblem{What is the equivalent of the Haldane prior in the Binomial likelihood model for the Poisson likelihood model? Use an interpretation of pseudocounts to explain.}\spc{2}
+
+\intermediatesubproblem{Prove that posterior predictive distribution for the next Poisson realization (i.e. $n^* = 1$) given $n$ observed Poisson realizations is negative binomially distributed and show its parameters are $p = \beta / (\beta + 1)$ and $r = \alpha$ for $\alpha \in \naturals$.}\spc{10}
+
+\intermediatesubproblem{If $\alpha \notin \naturals$, create an \qu{extended negative binomial} r.v. and find its PMF. You can copy from Wikipedia.}\spc{3}
+
+
+\intermediatesubproblem{Why is the extended negative binomial r.v. also known as the gamma-Poisson mixture distribution? Why is it also called the \qu{overdispersed Poisson}?}\spc{5}
+
+\extracreditsubproblem{[MA] Find the joint posterior predictive distribution for $m$ future observations. I couldn't find the answer to this myself nor compute the integral.}\spc{5}
+
+\intermediatesubproblem{If you observe $0,3,2,4,2,6,1,0,5$, give a 95\% CR for $\theta$. Pick an objective (uninformative) prior.}\spc{5}
+
+\intermediatesubproblem{Using the data and the prior from (r), test if $\theta < 2$.}\spc{5}
+
+
+\extracreditsubproblem{We talked about that the negative binomial is an \qu{overdispersed} Poisson. Show that the negative binomial converges to a Poisson.}\spc{11}
+
+\end{enumerate}
+
+
+\problem{We now discuss the theory of the normal-normal conjugate model. Assume 
+
+\beqn
+\Xoneton~|~\theta,\sigsq \iid \normnot{\theta}{\sigsq}
+\eeqn 
+
+but where you see only \qu{$X$}, this is shorthand for all $n$ samples.}
+
+\begin{enumerate}
+
+\easysubproblem{What is the kernel of $\theta~|~X,~\sigsq$?}\spc{1}
+
+\hardsubproblem{Show that posterior of $\theta~|~X,~\sigsq$ is normal if $\theta \sim \normnot{\mu_0}{\tausq}$. Try to do it yourself and only copy from the notes if you have to.}\spc{16}
+
+
+\hardsubproblem{Show that predictive distribution of $X^*~|~X,~\sigsq$ is normal if $n^*=1$ and $\theta \sim \normnot{\mu_0}{\sigsq / n_0}$ by solving the integral and not using the convolution. Try to do it yourself and only copy from the notes if you have to.}\spc{20}
+
+
+
+\extracreditsubproblem{Find the predictive distribution of $X^*~|~X,~\sigsq$ $n^* > 1$ and $\theta \sim \normnot{\mu_0}{\sigsq / n_0}$.}\spc{0}
+
+
+\easysubproblem{What is the kernel of $\sigsq~|~X,~\theta$?}\spc{3}
+
+\hardsubproblem{Show that posterior of $\sigsq~|~X,~\theta$ is inverse gamma if $\theta \sim \invgammanot{\overtwo{n_0}}{\overtwo{n_0 \sigsq_0}}$. Try to do it yourself and only copy from the notes if you have to.}\pagebreak
+
+
+\hardsubproblem{[MA] Show that predictive distribution of $X^*~|~X,~\theta$ is non-standard Student's $t$ if $n^*=1$ and $\theta \sim \invgammanot{\overtwo{n_0}}{\overtwo{n_0 \sigsq_0}}$ by solving the integral. Try to do it yourself and only copy from the notes if you have to.}\spc{12}
+
+\hardsubproblem{[MA] Find the Jeffrey's Prior for inference on $\sigsq$ if $\theta$ is known.}\spc{15}
+
+\end{enumerate}
+
+\problem This question is about building models for the prices of cars sold at dealerships.
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=2.7in]{accord.jpg}
+\end{figure}
+
+The 2016 Honda Accord sells at many different dealerships in New York City but sell it for more and some for less. We'll assume that the final negotiated price is distributed normally because it's most likely the sum of many different negotiation factors.
+
+Our goal here is to determine the mean price at a certain car dealership in Astoria that people have been saying is \qu{too cheap} and if it's too cheap, Honda corporate may wish to investigate.
+
+
+\begin{enumerate}
+
+
+
+\easysubproblem{Assume that each Accord's price at the Astoria dealership is normal and $\iid$ given the parameters. Is this a good model? Why or why not? There is no \qu{correct} answer here but I expect you to defend whatever answer you write using the concepts we discussed in class.} \spc{6}
+
+\easysubproblem{Despite what you wrote in (b), assume $\iid$ for the rest of the problem. The nationwide variance for a Honda Accord selling price we're going to assume is $\sigsq = \$1000^2$. Given a sample with average $\xbar$ and sample size $n$, what is the distribution of the mean price of a car from this shady Astoria dealership? Assume an uninformative prior of your choice but ensure to explicitly state it.}\spc{5}
+
+\easysubproblem{You and your colleague go down to the Astoria dealership undercover and ask to buy a Honda. After much negotiation, they will sell it to you for \$19,000 and they will sell it to your colleague for \$18,200 but they sense something suspicious so you hesitate to send another one of your guys down there to do another faux negotiation. Unfortunately, we're going to have to estimate the mean with just $x_1=19000$ and $x_2 = 18200$. What is your best guess of the mean price of Honda Accords sold here? Assume your prior from (a). \compexpl }\spc{2}
+
+\easysubproblem{What is the shrinkage value (which we have been denoting $\rho$) for this estimate? \compexpl}\spc{3}
+
+\intermediatesubproblem{Based on this data, we wish to test if this dealership is selling Honda Accords below the manufacturer sugested retail price (MSRP) of \$22,205 --- if so, they would be subject to a fine. Calculate a $p$-value for this test below by using notation from Table~\ref{tab:eqs} but do not solve numerically.}\spc{4}
+
+\intermediatesubproblem{What is the probability I get a really good deal --- that I can buy a car from these Astoria people for under \$17,000? Use the notation from Table~\ref{tab:eqs} but do not solve numerically.}\spc{3}
+
+
+
+\end{enumerate}
+
+\problem This question is about building a model to understand the accuracy of this beverage-filling machine pictured below:
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=3.7in]{milk_filling.jpg}
+\end{figure}
+
+This machine fills 12oz plastic bottles. There is no doubt the mean amount of liquid filled per bottle is 12oz as been determined by the final weights of pallets of filled bottles. But we are uncertain about the variance. We decide to do an experiment and select $n = 21$ bottles at random and measure the amount of liquid in each bottle. Here are the measurements:
+
+\begin{verbatim}
+                   12.00 12.05 11.98 11.66 12.05 11.92 12.03
+                   12.23 12.36 11.57 12.04 12.10 11.99 12.47
+                   12.57 11.83 12.20 12.48 12.14 12.14 12.74
+\end{verbatim}
+
+\begin{enumerate}
+
+\easysubproblem{Write a model below for the amount of milk in each of the $n$ bottles. Hint: use the normal model!}\spc{3}
+
+\easysubproblem{Find the MLE for $\sigsq$.}\spc{3}
+
+\easysubproblem{Under the Jeffrey's prior for $\sigsq$, find the posterior of $\sigsq$ by solving for the parameter values.}\spc{3}
+
+\intermediatesubproblem{Find a left-sided credible region for $\sigsq$. This will give the upper bound for the machine's variance.}\spc{3}
+
+
+\intermediatesubproblem{The bottles are actually 13.5oz. This means that you wish to test if $\sigsq > 0.352$ for if so, about 1/100,000 of the bottles will be overfull and that's the tolerance of the factory. Do this test.}\spc{6}
+
+
+\intermediatesubproblem{Find the probability the next bottle has more than 13oz of liquid.}\spc{3}
+
+\end{enumerate}
+
+
+
+\end{document}
+
+
+
+
+
