@@ -4,7 +4,7 @@ This is the course homepage for Math 341 (and Masters level 650.3-02) for the Sp
 
 ## Lectures
 
-My lectures can be listened to as youtube tracks [(all lectures)](https://www.youtube.com/playlist?list=) and lecture notes are also scanned in as PDF files contributed by students and myself.
+My lectures can be listened to as youtube tracks and lecture notes are also scanned in as PDF files contributed by students and myself.
 
 <!-- 
 * Lecture 23 [(audio)](https://youtu.be/9GeC_FPYH7w) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec23figueroa.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec20kap.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec23kap.pdf)
@@ -60,13 +60,11 @@ My lectures can be listened to as youtube tracks [(all lectures)](https://www.yo
 [(practice exam 2017)](https://github.com/kapelner/QC_Math_341_Spring_2017/blob/master/exams/midterm1/midterm1.pdf) [(practice exam 2017 solutions)](https://github.com/kapelner/QC_Math_341_Spring_2017/blob/master/exams/midterm1/midterm1_solutions.pdf) Omit 1p, 2a
 [(practice exam 2016)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/midterm1/midterm1.pdf) [(practice exam 2016 solutions)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/midterm1/midterm1_solutions.pdf) Omit 1l, m, n, t, v, w, x, z
 
-In addition, do Midterm 2
-
 * Midterm II
 
-[(practice exam 2018)](https://github.com/kapelner/QC_Math_341_Spring_2018/blob/master/exams/midterm2/midterm2.pdf) [(practice exam 2018 solutions)](https://github.com/kapelner/QC_Math_341_Spring_2018/blob/master/exams/midterm2/midterm2_solutions.pdf)
-[(practice exam 2017)](https://github.com/kapelner/QC_Math_341_Spring_2017/blob/master/exams/midterm2/midterm2.pdf) [(practice exam 2017 solutions)](https://github.com/kapelner/QC_Math_341_Spring_2017/blob/master/exams/midterm2/midterm2_solutions.pdf) Omit 1g,h. The concepts in 1i-k will be tested but not the specifics. Omit 2a
-[(practice exam 2016)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/midterm2/midterm2.pdf) [(practice exam 2016 solutions)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/midterm2/midterm2_solutions.pdf) Omit problem 1e,f. Omit problem 2. Omit problem 3h-l.
+[(practice exam 2018)](https://github.com/kapelner/QC_Math_341_Spring_2018/blob/master/exams/midterm2/midterm2.pdf) [(practice exam 2018 solutions)](https://github.com/kapelner/QC_Math_341_Spring_2018/blob/master/exams/midterm2/midterm2_solutions.pdf) Omit 2d
+[(practice exam 2017)](https://github.com/kapelner/QC_Math_341_Spring_2017/blob/master/exams/midterm2/midterm2.pdf) [(practice exam 2017 solutions)](https://github.com/kapelner/QC_Math_341_Spring_2017/blob/master/exams/midterm2/midterm2_solutions.pdf)
+[(practice exam 2016)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/midterm2/midterm2.pdf) [(practice exam 2016 solutions)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/midterm2/midterm2_solutions.pdf) Omit problem 1e,f. Omit problem 2.
 
 * Final
 
