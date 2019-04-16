@@ -1,0 +1,150 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\title{Math 341 / 650 Spring 2019 \\ Midterm Examination Two}
+\author{Professor Adam Kapelner}
+
+\date{Tuesday, April 16, 2019}
+
+\begin{document}
+\maketitle
+
+\noindent Full Name \line(1,0){410}
+
+\thispagestyle{empty}
+
+\section*{Code of Academic Integrity}
+
+\footnotesize
+Since the college is an academic community, its fundamental purpose is the pursuit of knowledge. Essential to the success of this educational mission is a commitment to the principles of academic integrity. Every member of the college community is responsible for upholding the highest standards of honesty at all times. Students, as members of the community, are also responsible for adhering to the principles and spirit of the following Code of Academic Integrity.
+
+Activities that have the effect or intention of interfering with education, pursuit of knowledge, or fair evaluation of a student's performance are prohibited. Examples of such activities include but are not limited to the following definitions:
+
+\paragraph{Cheating} Using or attempting to use unauthorized assistance, material, or study aids in examinations or other academic work or preventing, or attempting to prevent, another from using authorized assistance, material, or study aids. Example: using an unauthorized cheat sheet in a quiz or exam, altering a graded exam and resubmitting it for a better grade, etc.
+\\
+
+\noindent I acknowledge and agree to uphold this Code of Academic Integrity. \\
+
+\begin{center}
+\line(1,0){250} ~~~ \line(1,0){100}\\
+~~~~~~~~~~~~~~~~~~~~~signature~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ date
+\end{center}
+
+\normalsize
+
+\section*{Instructions}
+
+This exam is seventy five minutes and closed-book. You are allowed \textbf{one} page (front and back) of a \qu{cheat sheet.} You may use a graphing calculator of your choice. Please read the questions carefully. If the question reads \qu{compute,} this means the solution will be a number otherwise you can leave the answer in \textit{any} widely accepted mathematical notation which could be resolved to an exact or approximate number with the use of a computer. I advise you to skip problems marked \qu{[Extra Credit]} until you have finished the other questions on the exam, then loop back and plug in all the holes. I also advise you to use pencil. The exam is 100 points total plus extra credit. Partial credit will be granted for incomplete answers on most of the questions. \fbox{Box} in your final answers. Good luck!
+
+\pagebreak
+
+\input{R_equations_table}
+
+
+\problem Uber is evaluating a new pool product for intercity ridesharing. They are first trying to estimate the demand in number of riders $\theta$ going from New York City to Philadelphia per weekday. 
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=3.5in]{nyc_philly.jpg}
+\end{figure}
+
+To estimate this demand, they have piloted the program among their VIP customers and collected the number of people who requested such pooled rides for $n = 20$ weekdays. The data is below:
+
+\begin{verbatim}
+       39 50 57 50 42 50 56 68 49 50 53 53 48 44 56 30 57 49 54 48
+\end{verbatim}
+
+\noindent Summary statistics for this data are: $\xbar = 50.15$ and $s = 7.809$.\pagebreak
+
+\benum
+
+\subquestionwithpoints{6} In modeling this dataset, assume $\mathcal{F}: X_1, \ldots, X_{20}~|~\theta \iid \poisson{\theta}$. Explain why this assumption is reasonable.\spc{6}
+
+\subquestionwithpoints{6} Find the posterior distribution (including the values of the hyperparameters to two decimal places). List all assumptions explicitly. \spc{3}
+
+\subquestionwithpoints{6} Using your answer from (b), provide a Bayesian point estimate of $\theta$. \spc{1}
+
+\subquestionwithpoints{6} Uber will only turn a profit if there are 55 or more riders going from NYC to Philadelphia per weekday. Find the probability they will turn a profit using your answer from (b). \spc{2}
+
+
+\subquestionwithpoints{6} Find the probability there are 55 or more riders going from NYC to Philadelphia tomorrow (Wednesday) using the data and whatever assumptions you made in (b). \spc{7}
+
+
+\eenum
+
+\problem Consider the geometric model $\mathcal{F} : \Xoneton~|~\theta \iid \text{Geom}(\theta) := (1 - \theta)^x \theta$, its PMF, $\theta \in \Theta = (0, 1)$, Supp$\bracks{X} = \braces{0, 1, 2, \ldots}$, $\expe{X} = \frac{1 - \theta}{\theta}$ and $\var{X} = \frac{1 - \theta}{\theta^2}$.
+
+\benum
+
+\subquestionwithpoints{6} Find $\cprob{X}{\theta}$ where $X$ refers to all data (i.e. $\Xoneton$). Simplify.\spc{4}
+
+\subquestionwithpoints{6} Show that the beta distribution is conjugate for the geometric likelihood.\spc{5}
+
+\subquestionwithpoints{9} Show that Jeffrey's Prior is a beta distribution. \spc{7}
+
+
+\subquestionwithpoints{1} Is Jeffrey's prior you found in the previous question proper? Yes / no. \spc{9}
+
+\subquestionwithpoints{5} [Extra Credit] Find $\cprob{X^*}{X}$ for one new sample (i.e. $n^* = 1$) and simplify. \spc{8}
+
+\eenum
+
+\problem This question is about building a model to understand the accuracy of this beverage-filling machine
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=3.7in]{milk_filling.jpg}
+\end{figure}
+
+\noindent which fills 12oz plastic bottles. We decide to do an experiment and select $n = 50$ bottles at random and measure the amount of liquid in each bottle. Here are the volumes (in oz):
+
+\begin{verbatim}
+       10.76 11.02 11.62 10.20 12.03 12.18 12.06 11.42 11.93 10.68
+       11.81 11.27 11.68 11.31 11.29 12.37 12.00 10.74 12.04 10.69
+       11.82 11.50 11.48 11.81 11.24 11.67 11.02 11.52 11.98 11.99
+       11.99 11.85 11.42 11.95 10.77 11.56 11.77 11.43 12.03 11.89
+       11.50 11.75 11.30 12.26 12.22 12.94 10.80 12.01 11.61 12.35
+\end{verbatim}
+
+\noindent and sample statistics: $\xbar = 11.61$oz and $s = 0.533$oz. We will consider these measurements realizations from the model $\mathcal{F} : \Xoneton~|~\theta, \sigsq \iid \normnot{\theta}{\sigsq}$.
+\benum
+
+
+\subquestionwithpoints{8} The company is interested in testing if the bottles are being underfilled (i.e. less than 12oz). Even though it is unrealistic, assume that $\sigsq = s^2 = 0.533^2 = 0.284$. Use an uninformative prior and set the significant level of the test to be $\alpha = 5\%$. Calculate as exactly as you can.\spc{4}
+
+\subquestionwithpoints{6} What is the probability a bottle selected at random will be underfilled? Leave your answer in terms of the \texttt{pnorm} function with arguments rounded to two decimal places. Do not solve explicitly.\spc{2}
+
+
+\subquestionwithpoints{6} Design a prior centered at 12oz with the strength of 100 samples. Note: this is a standalone question.\spc{3}
+
+
+\subquestionwithpoints{6} The company is interested understanding if the bottles are being filled too erratically. Even though it is unrealistic, assume the machine is filling accurately on average (i.e. $\theta  =12$oz exactly). Find a Bayesian estimate of $\sigsq$ explicitly to two decimal places (an answer using a function in Table~\ref{tab:eqs} is not acceptable here). I have precomputed $\sigsqhat_{MLE} = \frac{1}{50} \sum_{i=1}^{50} (x_i - 12)^2 = 0.4305.$ List your assumptions explicitly. \spc{10}
+
+\subquestionwithpoints{6} Given the assumptions from the previous question of mean being known and an uninformative prior for $\sigsq$, find the probability a bottle selected at random will be overfilled (i.e. 14oz or more).\spc{10}
+
+\eenum
+
+\problem Below are theoretical questions that are independent of each other.
+
+\benum
+
+\subquestionwithpoints{6} If $X~|~\theta,n \sim \binomial{n}{\theta}$ where $n$ is known, the prior on theta is $\betanot{\alpha}{\beta}$ where $\alpha$ and $\beta$ are both $>0$ and non-integer and $X^*$ is the number of successes in the next $n^*$ trials, find the kernel of the posterior predictive distribution, i.e. $k(X^*~|~X, n)$. Simplify as much as possible.\spc{16}
+
+\subquestionwithpoints{6} Compute the following integral as a function of $a$, $b$ and fundamental constants. To get full credit you must show and justify all steps. \\~\\
+$\displaystyle\int_\reals e^{ax - bx^2} dx = $\spc{5}
+
+
+\subquestionwithpoints{4} 
+\vspace{-1cm}
+\begin{figure}[h]
+\centering
+\includegraphics[width=3.3in]{comic.jpg}
+\end{figure}
+
+Choose the best sentence completion. \qu{The comic above is an example of ...} \\~\\
+(I) normal-normal conjugacy (II) using an informative prior  (III) using the uninformative Jeffrey's prior (IV) compound distribution (V) point estimation using $\thetahatmle$.
+
+\eenum
+
+\end{document}
