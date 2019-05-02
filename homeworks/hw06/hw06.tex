@@ -1,0 +1,295 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\newtoggle{professormode}
+\toggletrue{professormode} %STUDENTS: DELETE or COMMENT this line
+
+
+
+\title{MATH 341 / 650.3 Spring 2019 FINAL Homework (\#6)}
+
+\author{Professor Adam Kapelner} %STUDENTS: write your name here
+
+\iftoggle{professormode}{
+\date{Due in KY604, Tuesday 11:59PM, May 14, 2019 \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
+}
+
+\renewcommand{\abstractname}{Instructions and Philosophy}
+
+\begin{document}
+\maketitle
+
+\iftoggle{professormode}{
+\begin{abstract}
+The path to success in this class is to do many problems. Unlike other courses, exclusively doing reading(s) will not help. Coming to lecture is akin to watching workout videos; thinking about and solving problems on your own is the actual ``working out.''  Feel free to \qu{work out} with others; \textbf{I want you to work on this in groups.}
+
+Reading is still \textit{required}. For this homework set, read about the normal-inverse-gamma-normal-inverse-gamma model for mean and variance inference with Student's $t$ posterior predictive distribution, Gibbs sampling, the change point-model, and the mixture model.
+
+The problems below are color coded: \ingreen{green} problems are considered \textit{easy} and marked \qu{[easy]}; \inorange{yellow} problems are considered \textit{intermediate} and marked \qu{[harder]}, \inred{red} problems are considered \textit{difficult} and marked \qu{[difficult]} and \inpurple{purple} problems are extra credit. The \textit{easy} problems are intended to be ``giveaways'' if you went to class. Do as much as you can of the others; I expect you to attempt the \textit{difficult} problems. 
+
+Problems marked \qu{[MA]} are for the masters students only (those enrolled in the 650.3 course). For those in 341, doing these questions will count as extra credit.
+
+This homework is worth 100 points but the point distribution will not be determined until after the due date. See syllabus for the policy on late homework.
+
+Up to 10 points are given as a bonus if the homework is typed using \LaTeX. Links to instaling \LaTeX~and program for compiling \LaTeX~is found on the syllabus. You are encouraged to use \url{overleaf.com}. If you are handing in homework this way, read the comments in the code; there are two lines to comment out and you should replace my name with yours and write your section. The easiest way to use overleaf is to copy the raw text from hwxx.tex and preamble.tex into two new overleaf tex files with the same name. If you are asked to make drawings, you can take a picture of your handwritten drawing and insert them as figures or leave space using the \qu{$\backslash$vspace} command and draw them in after printing or attach them stapled.
+
+The document is available with spaces for you to write your answers. If not using \LaTeX, print this document and write in your answers. I do not accept homeworks which are \textit{not} on this printout. Keep this first page printed for your records.
+
+\end{abstract}
+
+\thispagestyle{empty}
+\vspace{1cm}
+NAME: \line(1,0){380}
+\clearpage
+}
+
+\input{R_equations_table}
+
+
+\problem{These are questions about McGrayne's book, chapters 15, 16, 17 and the epilogue.}
+
+\begin{enumerate}
+
+\easysubproblem{During the H-Bomb search in Spain and its coastal regions, RAdm. William Guest was busy sending ships here, there and everywhere even if the ships couldn't see the bottom of the ocean. How did Richardson use those useless searches?}\spc{2}
+
+\intermediatesubproblem{When the Navy was looking for the \textit{Scorpion} submarine, they used Monte Carlo methods (which we will see in class soon). How does the description of these methods by Richardson (p199) remind you of the \qu{sampling} techniques to approximate integrals we did in class?}\spc{4}
+
+\intermediatesubproblem{What is a Kalman filter? Read about it online and write a few descriptive sentences.}\spc{4}
+
+
+\intermediatesubproblem{Where do frequentist methods practically break down? (end of chapter 15)}\spc{4}
+
+\easysubproblem{What was the main problem facing Bayesian Statistics in the early 1980's?}\spc{4}
+
+\intermediatesubproblem{What is the \qu{curse of dimensionality?}}\spc{4}
+
+\easysubproblem{How did Bayesian Statistics help sociologists?}\spc{4}
+
+\easysubproblem{How did Gibbs sampling come to be?}\spc{3}
+
+\easysubproblem{Were the Geman brothers the first to discover the Gibbs sampler?}\spc{4}
+
+\easysubproblem{Who officially discovered the expectation-maximization (EM) algorithm? And who \textit{really} discovered it?}\spc{4}
+
+\intermediatesubproblem{How did Bayesians \qu{break} the curse of dimensionality?}\spc{4}
+
+\intermediatesubproblem{Consider the integrals we use in class to find expectations or to approximate PDF's / PMF's --- how can they be replaced?}\spc{4}
+
+\easysubproblem{What did physicists call \qu{Markov Chain Monte Carlo} (MCMC)? (p222)}\spc{1}
+
+\easysubproblem{Why is sampling called \qu{Monte Carlo} and who named it that?}\spc{4}
+
+\easysubproblem{The Metropolis-Hastings (MH) Algorithm is world famous and used in myriad applications. Why didn't Hastings get any credit?}\spc{4}
+
+\easysubproblem{The combination of Bayesian Statistics + MCMC has been called ... (p224)}\spc{1}
+
+
+\extracreditsubproblem{p225 talks about Thomas Kuhn's ideas of \qu{paradigm shifts.} What is a \qu{paradigm shift} and does Bayesian Statistics + MCMC qualify?}\spc{8}
+
+\easysubproblem{How did the \href{http://www.mrc-bsu.cam.ac.uk/software/bugs/}{BUGS} software change the world?}\spc{4}
+
+\easysubproblem{Lindley said that Bayesian Statistics would win out over Frequentist Statistics because it was more logical. What in reality was the reason for the eventual victory of Bayes?}\spc{4}
+
+\extracreditsubproblem{One of my PhD advisors, \href{https://statistics.wharton.upenn.edu/profile/563/}{Ed George} at Wharton told me that \qu{Bayesian Statistics is really `knowledge engineering.'} Is this true? Explain.}\spc{3}
+
+\extracreditsubproblem{Take a look at the software \href{http://mc-stan.org/}{Stan}. What kind of potential does it have to change the world? Note: I had an opportunity to work on Stan as a postdoc (right after I finished his PhD) but chose to come to QC instead.}\spc{10}
+
+\easysubproblem{[optional] What do the computer scientists who adopted Bayesian methods care most about and whose view do they subscribe to? (p233)}\spc{1}
+
+\easysubproblem{[optional] How was \qu{Stanley} able to cross the Nevada desert?}\spc{3}
+
+\easysubproblem{[optional] What two factors are leading to the \qu{crumbling of the Tower of Babel?}}\spc{3}
+
+\intermediatesubproblem{[optional] Does the brain work through iterative Bayesian modeling?}\spc{4}
+
+\easysubproblem{[optional] According to Geman, what is the most powerful argument for Bayesian Statistics?}\spc{4}
+
+\end{enumerate}
+
+
+
+\problem{Now we will move to the Bayesian normal-normal model for estimating both the mean and variance and demonstrate similarities with the classical results.}
+
+\begin{enumerate}
+
+\intermediatesubproblem{If $\Xoneton~|~\theta, \sigsq \iid \normnot{\theta}{\sigsq}$ and $X$ represents all $\Xoneton$, Find the kernel of $\cprob{\theta,~\sigsq}{X}$ if $\prob{\theta,~\sigsq} \propto \oneover{\sigsq}$. Use the substitution that we made in class:
+
+\beqn
+\sum_{i=1}^n (x_i - \theta)^2 = (n-1)s^2 + n(\xbar - \theta)^2
+\eeqn
+
+where $s^2 := \oneover{n-1} \sum_{i=1}^n (x_i -\xbar)^2$. We do this here because this substitution is important for what comes next.}\spc{8}
+
+
+\intermediatesubproblem{Using Bayes Rule, break up $\cprob{\theta,~\sigsq}{X}$ into two pieces. How are those two pieces distributed?}\spc{6}
+
+\intermediatesubproblem{Using your answer from (b), explain in English how you can create samples from the distribution $\cprob{\theta,~\sigsq}{X}$ that look like $\braces{\bracks{\theta_1, \sigsq_1}, \bracks{\theta_2, \sigsq_2}, \ldots, \bracks{\theta_S, \sigsq_S}}$.}\spc{8}
+
+\hardsubproblem{Using these samples, how would you estimate $\cexpe{\theta}{X}$ and $\cexpe{\sigsq}{X}$? Why is $\cexpe{\theta}{X}$ of paramount importance?}\spc{5}
+
+
+\hardsubproblem{Using these samples, how would you estimate a 95\% CR for $\theta$?}\spc{5}
+
+\hardsubproblem{Using these samples, how would you obtain a $p$-val for testing if $\sigsq > 1.364$?}\spc{5}
+
+\hardsubproblem{[MA] Using these samples, how would you estimate $\corr{\theta~|~X}{~\sigsq~|~X}$ i.e. the correlation between the posterior distributions of the two parameters?}\spc{5}
+
+%\easysubproblem{If $\Xoneton~|~\theta, \sigsq \iid \normnot{\theta}{\sigsq}$ and $\theta \sim \normnot{\mu_0}{\tausq}$ write the distribution of $\theta~|~X,\sigsq$. Hint: it's in the notes and it was HW6 6(d). Note this problem is independent of the other problems.}\spc{5}
+
+\easysubproblem{Find $\cprob{\theta}{X,~\sigsq}$ by using the full posterior and then conditioning on $\sigsq$. You should get the same answer as we did before the midterm.}\spc{2}
+
+\easysubproblem{Find $\cprob{\sigsq}{X,~\theta}$ by using the full posterior and then conditioning on $\theta$. You should get the same answer as we did right after the midterm.}\spc{4}
+
+%\intermediatesubproblem{Show that $\cprob{\sigsq}{X}$ is an inverse gamma distribution and find its parameters.}\spc{4}
+
+\hardsubproblem{Show that $\cprob{\theta}{X}$ is a non-standard $T$ distribution assuming the prior $\prob{\theta,~\sigsq} \propto \oneover{\sigsq}$. The answer is in the notes, but try to do it yourself.}\spc{8}
+
+
+%\intermediatesubproblem{How does this compare to 2(j)? Note that $X \sim \invgammanot{\alpha}{\beta}$ then $cX \sim \invgammanot{\alpha}{\frac{\beta}{c}}$.}\spc{2}
+
+\easysubproblem{Write down the distribution of $\cprob{X^*}{X}$ assuming the prior $\prob{\theta,~\sigsq} \propto \oneover{\sigsq}$. This is in the notes.}\spc{1}
+
+\extracreditsubproblem{Prove (k).}\spc{0}
+
+
+\intermediatesubproblem{Explain how to sample from the distribution of $\cprob{X^*}{X}$. Also in the notes.}\spc{9}
+
+\intermediatesubproblem{Now consider the informative conjugate prior of $\prob{\theta,~\sigsq} = \cprob{\theta}{\sigsq} \prob{\sigsq}$ where $\cprob{\theta}{\sigsq} = \normnot{\mu_0}{\frac{\sigsq}{m}}$ and $\prob{\sigsq} = \invgammanot{\overtwo{n_0}}{\overtwo{n_0 \sigsq_0}}$ i.e. the general normal-inverse-gamma. What is its kernel? Collect common terms and be neat.}\spc{9}
+
+
+\hardsubproblem{[MA] If $\Xoneton~|~\theta, \sigsq \iid \normnot{\theta}{\sigsq}$ and given the general prior above, find the posterior and demonstrate it that the normal-inverse gamma is conjugate for the normal likelihood with both mean and variance unknown. This is what I did \emph{not} do in class but did last year.}\spc{13}
+
+\end{enumerate}
+
+\problem{We model the returns of S\&P 500 here.}
+
+\begin{enumerate}
+\easysubproblem{Below are the 16,428 daily returns (as a percentage) of the S\&P 500 dating back to January 4, 1950 and the code used to generate it. Does the data look normal? Yes/no}\spc{0}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=7in]{daily_returns}
+\end{figure}
+
+%\begin{verbatim}
+%X = read.csv('sp_tot_ret_price_1950.csv')
+%n = nrow(X)
+%n
+%hist(X[,4], br = 1000, 
+%  main = 'daily returns (as a percentage) of the S&P 500')
+%\end{verbatim}
+
+\intermediatesubproblem{Do you think the data is $\iid$? Explain.}\spc{1}
+
+\intermediatesubproblem{Assume $\iid$ normal data regardless of what you wrote in (a) and (b). The sample average is $\xbar = 0.0003415$ and the sample standard deviation is $s = 0.0096$. Under an objective prior, give a 95\% credible region for the true mean daily return.}\spc{4}
+
+\hardsubproblem{Give a 95\% credible region for \emph{tomorrow's} return using functions in Table~\ref{tab:eqs}.}\spc{4}
+
+\end{enumerate}
+
+
+
+
+\problem{This problem is about the normal-normal model using a \qu{semi-conjugate} prior. Assume $\Xoneton~|~\theta, \sigsq \iid \normnot{\theta}{\sigsq}$ throughout.}
+
+\begin{enumerate}
+
+\easysubproblem{If $\theta$ and $\sigsq$ are assumed to be independent, how can $\prob{\theta,~\sigsq}$ be factored?}\spc{1}
+
+\easysubproblem{If $\prob{\theta} = \normnot{\mu_0}{\tausq}$ and $\prob{\sigsq} \sim \invgammanot{\overtwo{n_0}}{\overtwo{n_0 \sigsq_0}}$, find the kernel of the joint posterior, $\cprob{\theta,~\sigsq}{X}$}.\spc{4}
+
+\hardsubproblem{Show that this kernel can be factored into the kernel of a normal where the leftover is \textit{not} the kernel of an inverse gamma. This is in the lecture notes.}\spc{12}
+
+\hardsubproblem{[MA] Find the posterior mode of $\sigsq$ using $k(\sigsq~|~X)$.}\spc{5}
+
+\hardsubproblem{Describe how you would sample from $k(\sigsq~|~X)$. Make all steps explicit and use the notation from Table~\ref{tab:eqs}.}\spc{10}
+
+\hardsubproblem{Describe how you would sample from $\cprob{\theta,~\sigsq}{X}$. Make use of the sampling algorithm in the previous question. Make all steps explicit and use the notation from Table~\ref{tab:eqs}.}\spc{10}
+ 
+
+
+\hardsubproblem{What are the two main disadvantages of grid sampling?}\spc{4}
+
+\hardsubproblem{Why do you think the prior $\prob{\theta} = \normnot{\mu_0}{\tausq}$ and $\prob{\sigsq} \sim \invgammanot{\overtwo{n_0}}{\overtwo{n_0 \sigsq_0}}$ is called \qu{semi-conjugate}?}\spc{4}
+
+
+\extracreditsubproblem{[MA] Find the MMSE of $\sigsq$}\spc{0}
+
+\end{enumerate}
+
+\problem{These are questions which introduce Gibbs Sampling.}
+
+\begin{enumerate}
+\easysubproblem{Outline the systematic sweep Gibbs Sampler algorithm below (in your notes).}\spc{8}
+
+\extracreditsubproblem{Under what conditions does this algorithm converge?}\spc{0}
+
+\easysubproblem{Pretend you are estimating $\cprob{\theta_1,~\theta_2}{X}$ and the joint posterior looks like the picture below where the $x$ axis is $\theta_1$ and the $y$ axis is $\theta_2$ and darker colors indicate higher probability. Begin at $\bracks{\theta_1,\theta_2} = \bracks{0.5,0.5}$ and simulate 5 iterations of the systematic sweep Gibbs sampling algorithm by drawing new points on the plot (just as we did in class).}
+
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=4in]{contour.png}
+\end{figure}
+\end{enumerate}
+
+
+\problem{These are questions about the change point model and the Gibbs sampler to draw inference for its parameters. You will have to use R to do this question. If you do not have it installed on your computer, you can use R online without installing anything by using \href{http://www.r-fiddle.org}{R-Fiddle}. After plots pop up you can make the plots bigger by resizing.}
+
+\begin{enumerate}
+
+\easysubproblem{Consider the change point Poisson model we looked at in class. We have $m$ exchangeable Poisson r.v.'s with parameter $\lambda_1$ followed by $n-m$ exchangeable Poisson r.v.'s with parameter $\lambda_2$. Both rate parameters and the value of $m$ are unknown so the parameter space is 3-dimensional. Write the likelihood below.}\spc{4}
+
+\easysubproblem{Consider the model in (a) where $\lambda_1 = 2$ and $\lambda_2 = 4$ and $m=10$ and $n=30$. Run the code on lines 1--14 of the code at the link \href{https://github.com/kapelner/QC_Math_341_Spring_2017/blob/master/lectures/lec20_demos/poisson_gamma_change_pt.R}{here} by copying them from the website and pasting them into an R console. This will plot a realization of the data with those parameters. Can you identify the change point visually?}\spc{1}
+
+\easysubproblem{Consider the model in (a) but we are blinded to the true values of the parameters given in (b) and we wish to estimate them via a Gibbs sampler. Run the code on lines 16--78 of the code at the link \href{https://github.com/kapelner/QC_Math_341_Spring_2017/blob/master/lectures/lec20_demos/poisson_gamma_change_pt.R}{here} which will run 10,000 iterations. What iteration number do you think the sampler converged?}\spc{1}
+
+\easysubproblem{Now we wish to assess autocorrelation among the chains from the Gibbs sampler run in (d). Run the code on lines 79--89 of the code at the link \href{https://github.com/kapelner/QC_Math_341_Spring_2017/blob/master/lectures/lec20_demos/poisson_gamma_change_pt.R}{here}. What do we mod our chains by to thin them out so the chains represent independent samples?}\spc{1}
+
+\easysubproblem{Run the code on lines 91--121 of the code at the link \href{https://github.com/kapelner/QC_Math_341_Spring_2017/blob/master/lectures/lec20_demos/poisson_gamma_change_pt.R}{here} which will first burn and thin the chains. Explain these three plots. What distributions do these frequency histograms approximate? You must have $\prob{\text{something}}$ in your answer. What are the blue lines? What are the red lines? What are the grey lines? Read the code if you have to for the answers.}\spc{4}
+
+\hardsubproblem{Test the following hypothesis: $H_0: m \leq 15$ by approximating the $p$-value from one of the plots in (e).}\spc{4}
+
+\hardsubproblem{[M.A.] Explain a procedure to test $H_0: \lambda_1 = \lambda_2$. You can use the plots if you wish, but you do not have to.}\spc{8}
+
+\hardsubproblem{What exactly would come from $\cprob{X^*}{X}$ in the context of this problem? Assume $X^*$ is the same dimension of $X$ (in our toy example, $n=30$). Explain in full detail. Be careful!}\spc{4}
+
+\extracreditsubproblem{Explain how you would estimate $\cov{\lambda_1}{\lambda_2}$ and what do you think this estimate will be close to?}\spc{7}
+
+
+\end{enumerate}
+
+
+\problem{These are questions about the mixture-of-two-normals model and the Gibbs sampler to draw inference for its parameters. You will have to use R to do this question. If you do not have it installed on your computer you can use \href{http://rextester.com/l/r_online_compiler}{this website} which will give you provide you with a workable R console.}
+
+\begin{enumerate}
+
+
+\easysubproblem{[Optional] Consider the mixture-of-two-normals model we looked at in class. Write the likelihood below.}\spc{4}
+
+\easysubproblem{[Optional] Consider the model in (a) with $\theta_1 = 0,~\theta_2 =4,~\sigsq_1 = 2,~\sigsq_2 = 1$ and $\rho = 2$. These are the targets of inference so pretend you don't know their values! Run the code on lines 1--16 of the code at the link \href{https://github.com/kapelner/QC_Math_341_Spring_2017/blob/master/lectures/lec21_demos/mixture_model/mixture_model_gibbs.R}{here} by copying them from the website and pasting them into an R console. This will plot a realization of the data with those parameters. Can you identify that it's a mixture of two normals visually?}\spc{1}
+
+\easysubproblem{[Optional] Consider the model in (a) but we are blinded to the true values of the parameters given in (b) and we wish to estimate them via a Gibbs sampler. Run the code on lines 19--92 of the code at the link \href{https://github.com/kapelner/QC_Math_341_Spring_2017/blob/master/lectures/lec21_demos/mixture_model/mixture_model_gibbs.R}{here} which will run 10,000 iterations. What iteration number do you think the sampler converged?}\spc{1}
+
+\easysubproblem{[Optional] Now we wish to assess autocorrelation among the chains from the Gibbs sampler run in (d). Run the code on lines 96--103 of the code at the link \href{https://github.com/kapelner/QC_Math_341_Spring_2017/blob/master/lectures/lec21_demos/mixture_model/mixture_model_gibbs.R}{here}. What do we mod our chains by to thin them out so the chains represent independent samples?}\spc{3}
+
+\easysubproblem{[Optional] Run the code on lines 120--152 of the code at the link \href{https://github.com/kapelner/QC_Math_341_Spring_2017/blob/master/lectures/lec21_demos/mixture_model/mixture_model_gibbs.R}{here} which will first burn and thin the chains. Explain these five plots. What distributions do these frequency histograms approximate?}\spc{4}
+
+\hardsubproblem{[Optional] Provide and approximate $CR_{\rho, 95\%}$. Does it capture the true value of $\rho$?}\spc{4}
+
+\hardsubproblem{[Optional] Explain carefully how you would approximate $\cprob{X^*}{X}$.}\spc{4}
+
+
+\hardsubproblem{[Optional] Explain carefully how you would approximate the probability that the 17th observation belonged to the $\normnot{\theta_1}{\sigsq_1}$ distribution.}\spc{4}
+
+\easysubproblem{[Optional] If one of the $\theta$'s did not have a known conditional distribution, which algorithm could you use? Would this algorithm take longer or shorter to converge than the Gibbs sampler you've seen here?}\spc{3}
+
+
+\extracreditsubproblem{Explain carefully how you would test if $\theta_1 \neq \theta_2$.}\spc{7}
+
+\end{enumerate}
+
+
+\end{document}
+

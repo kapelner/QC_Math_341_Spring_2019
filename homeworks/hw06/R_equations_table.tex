@@ -1,0 +1,85 @@
+\begin{table}[htp]
+\centering
+\small
+\begin{tabular}{l | llll}
+Distribution                  & Quantile  & PMF / PDF  &CDF       & Sampling  \\ 
+of r.v. &  Function & function         & function &  Function \\ \hline
+beta & \texttt{qbeta}($p$, $\alpha$, $\beta$)             
+& \texttt{d-}($x$, $\alpha$, $\beta$)
+& \texttt{p-}($x$, $\alpha$, $\beta$) 
+& \texttt{r-}($\alpha$, $\beta$) \\
+betabinomial & \texttt{qbetabinom}($p$, $n$, $\alpha$, $\beta$)              
+& \texttt{d-}($x$, $n$, $\alpha$, $\beta$)
+& \texttt{p-}($x$, $n$, $\alpha$, $\beta$) 
+& \texttt{r-}($n$, $\alpha$, $\beta$) \\
+
+%betanegativebinomial & \texttt{qbeta\_nbinom}($p$, $r$, $\alpha$, $\beta$) 
+%& \texttt{d-}($x$, $r$, $\alpha$, $\beta$)
+%& \texttt{p-}($x$, $r$, $\alpha$, $\beta$) 
+%& \texttt{r-}($r$, $\alpha$, $\beta$) \\
+
+binomial & \texttt{qbinom}($p$, $n$, $\theta$) 
+& \texttt{d-}($x$, $n$, $\theta$)
+& \texttt{p-}($x$, $n$, $\theta$) 
+& \texttt{r-}($n$, $\theta$) \\
+
+exponential & \texttt{qexp}($p$, $\theta$) 
+& \texttt{d-}($x$, $\theta$) 
+& \texttt{p-}($x$, $\theta$) 
+& \texttt{r-}($\theta$) \\
+
+gamma & \texttt{qgamma}($p$, $\alpha$, $\beta$) 
+& \texttt{d-}($x$, $\alpha$, $\beta$)
+& \texttt{p-}($x$, $\alpha$, $\beta$) 
+& \texttt{r-}($\alpha$, $\beta$) \\
+
+%geometric & \texttt{qgeom}($p$, $\theta$) 
+%& \texttt{d-}($x$, $\theta$)
+%& \texttt{p-}($x$, $\theta$) 
+%& \texttt{r-}($\theta$) \\
+
+inversegamma & \texttt{qinvgamma}($p$, $\alpha$, $\beta$) 
+& \texttt{d-}($x$, $\alpha$, $\beta$)
+& \texttt{p-}($x$, $\alpha$, $\beta$) 
+& \texttt{r-}($\alpha$, $\beta$) \\
+
+negative-binomial & \texttt{qnbinom}($p$, $r$, $\theta$) 
+& \texttt{d-}($x$, $r$, $\theta$) 
+& \texttt{p-}($x$, $r$, $\theta$) 
+& \texttt{r-}($r$, $\theta$) \\
+
+normal (univariate) & \texttt{qnorm}($p$, $\theta$, $\sigma$) 
+& \texttt{d-}($x$, $\theta$, $\sigma$)
+& \texttt{p-}($x$, $\theta$, $\sigma$) 
+& \texttt{r-}($\theta$, $\sigma$) \\
+
+%normal (multivariate) & 
+%& \multicolumn{2}{l}{\texttt{dmvnorm}($\x$, $\muvec$, $\bSigma$)} 
+%& \texttt{r-}($\muvec$, $\bSigma$) \\
+
+poisson & \texttt{qpois}($p$, $\theta$) 
+& \texttt{d-}($x$, $\theta$)
+& \texttt{p-}($x$, $\theta$) 
+& \texttt{r-}($\theta$) \\
+
+T (standard) & \texttt{qt}($p$, $\nu$) 
+& \texttt{d-}($x$, $\nu$) 
+& \texttt{p-}($x$, $\nu$)
+& \texttt{r-}($\nu$) \\
+
+T (nonstandard) & \texttt{qt.scaled}($p$, $\nu$, $\mu$, $\sigma$) 
+& \texttt{d-}($x$, $\nu$, $\mu$, $\sigma$)
+& \texttt{p-}($x$, $\nu$, $\mu$, $\sigma$) 
+& \texttt{r-}($\nu$, $\mu$, $\sigma$) \\
+
+uniform & \texttt{qunif}($p$, $a$, $b$) 
+& \texttt{d-}($x$, $a$, $b$)
+& \texttt{p-}($x$, $a$, $b$) 
+& \texttt{r-}($a$, $b$) \\
+
+
+\end{tabular}
+\caption{Functions from $\texttt{R}$ (in alphabetical order) that can be used on this assignment and exams. The hyphen in colums 3, 4 and 5 is shorthand notation for the full text of the r.v. which can be found in column 2.
+}
+\label{tab:eqs}
+\end{table}
