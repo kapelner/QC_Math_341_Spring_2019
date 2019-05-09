@@ -6,11 +6,11 @@ This is the course homepage for Math 341 (and Masters level 650.3-02) for the Sp
 
 My lectures can be listened to as youtube tracks and lecture notes are also scanned in as PDF files contributed by students and myself.
 
-<!-- 
-* Lecture 23 [(audio)](https://youtu.be/9GeC_FPYH7w) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec23figueroa.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec20kap.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec23kap.pdf)
-* Lecture 22 [(audio)](https://youtu.be/abi5-aJbe9M) [(Edwin Figueroa)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec22figueroa.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec20kap.pdf) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec22kap.pdf)  -->   
-* Lecture 21 [(audio)](https://youtu.be/) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec21kap.pdf) 
-* Lecture 20 [(audio)](https://youtu.be/) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec20kap.pdf)
+<!--   -->   
+* Lecture 23 [(audio)](https://youtu.be/TZHM6K2CSyo) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec23kap.pdf)
+* Lecture 22 [(audio)](https://youtu.be/cvpmFXVtLsw) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec22kap.pdf)
+* Lecture 21 [(audio)](https://youtu.be/yRCKCEGgFY4) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec21kap.pdf) 
+* Lecture 20 [(audio)](https://youtu.be/rXg20Jasgt8) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec20kap.pdf)
 * Lecture 19 [(audio)](https://youtu.be/klf2R2xsUWo) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec19kap.pdf)
 * Review 2 [(audio)](https://youtu.be/_7kmwQPnNwY)
 * Lecture 18 [(audio)](https://youtu.be/6tYEyrlpOe8) [(Prof)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/lectures/lec18kap.pdf)
