@@ -1,0 +1,196 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\title{Math 341 / 650 Spring 2019 \\ Final Examination}
+\author{Professor Adam Kapelner}
+
+\date{Thursday, May 16, 2019}
+
+\begin{document}
+\maketitle
+
+\noindent Full Name \line(1,0){410}
+
+\thispagestyle{empty}
+
+\section*{Code of Academic Integrity}
+
+\footnotesize
+Since the college is an academic community, its fundamental purpose is the pursuit of knowledge. Essential to the success of this educational mission is a commitment to the principles of academic integrity. Every member of the college community is responsible for upholding the highest standards of honesty at all times. Students, as members of the community, are also responsible for adhering to the principles and spirit of the following Code of Academic Integrity.
+
+Activities that have the effect or intention of interfering with education, pursuit of knowledge, or fair evaluation of a student's performance are prohibited. Examples of such activities include but are not limited to the following definitions:
+
+\paragraph{Cheating} Using or attempting to use unauthorized assistance, material, or study aids in examinations or other academic work or preventing, or attempting to prevent, another from using authorized assistance, material, or study aids. Example: using an unauthorized cheat sheet in a quiz or exam, altering a graded exam and resubmitting it for a better grade, etc.
+\\
+
+\noindent I acknowledge and agree to uphold this Code of Academic Integrity. \\
+
+\begin{center}
+\line(1,0){250} ~~~ \line(1,0){100}\\
+~~~~~~~~~~~~~~~~~~~~~signature~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ date
+\end{center}
+
+\normalsize
+
+\section*{Instructions}
+
+This exam is 120 minutes and closed-book. You are allowed \textbf{three} pages (front and back) of a \qu{cheat sheet.} You may use a graphing calculator of your choice. Please read the questions carefully. If the question reads \qu{compute,} this means the solution will be a number otherwise you can leave the answer in \textit{any} widely accepted mathematical notation which could be resolved to an exact or approximate number with the use of a computer. I advise you to skip problems marked \qu{[Extra Credit]} until you have finished the other questions on the exam, then loop back and plug in all the holes. I also advise you to use pencil. The exam is 100 points total plus extra credit. Partial credit will be granted for incomplete answers on most of the questions. \fbox{Box} in your final answers. Good luck!
+
+\pagebreak
+
+
+\input{R_equations_table}
+
+\problem Consider a call center that experiences calls from a large population of which there is very small probability each customer will call in each day. Let $\Xoneton$ denote the number of calls in a period of $n$ days. However, there are two types of customers: A and B (since there are two main products the company offers). And thus each day is either calls from company A or B:
+
+\beqn
+\Xoneton~|~\lambda_1, \lambda_2, \rho ~\iid~ \begin{cases} \frac{e^{-\lambda_1}\lambda_1^x}{x!} ~~w.p.~~\rho \\
+\frac{e^{-\lambda_2}\lambda_2^x}{x!} ~~w.p.~~(1-\rho) 
+\end{cases}
+\eeqn
+
+\benum
+\subquestionwithpoints{6} Provide uninformative priors for the three parameters. \spc{3}
+
+We now introduce the new parameters $I_1, \ldots, I_n$ where each is defined as:
+
+\beqn
+I_i := \begin{cases}
+1 ~~\text{if the calls from day $i$ come from customer type A} \\
+0 ~~\text{if the calls from day $i$ come from customer type B} \\
+\end{cases}
+\eeqn
+
+This is an idea known as \qu{data augmentation}. The likelihood now  becomes:
+
+\beqn
+&& \cprob{X_1, \ldots, X_n}{\lambda_1, \lambda_2, \rho, I_1, \ldots, I_n} = \prod_{i=1}^n \tothepow{\frac{e^{-\lambda_1}\lambda_1^{x_i}}{x_i!}}{I_i} \tothepow{\frac{e^{-\lambda_2}\lambda_2^{x_i}}{x_i!}}{1 - I_i} \rho^{I_i} (1 - \rho)^{1 - I_i} 
+\eeqn
+
+
+\subquestionwithpoints{5} Denote $\sum I_i := \sum_{i=1}^n I_i$. By using the likelihood above and your priors from part (a), Show all your work to prove that the kernel of $\cprob{\lambda_1, \lambda_2, \rho, I_1, \ldots, I_n}{X_1, \ldots, X_n}$, the posterior  is
+
+\vspace{-0.5cm}
+\beqn
+e^{-(\sum I_i) \lambda_1 } \lambda_1^{\sum I_i x_i} e^{-(n - \sum I_i) \lambda_2 } \lambda_2^{\sum (1 - I_i) x_i} \rho^{\sum I_i} (1 - \rho)^{n - \sum I_i}
+\eeqn\spc{4}
+
+\subquestionwithpoints{2} Is this a kernel from a known distribution? Yes / no. \spc{-0.5}
+
+
+\subquestionwithpoints{4} Name two strategies that can be used to creates samples $\bracks{\lambda_1, \lambda_2, \rho, I_1, \ldots, I_n}$ from the posterior $\cprob{\lambda_1, \lambda_2, \rho, I_1, \ldots, I_n}{X_1, \ldots, X_n}$. \spc{1}
+
+\subquestionwithpoints{4} Which strategy would be better and why? \spc{2}
+
+\subquestionwithpoints{4} Find the conditional distribution $\cprob{\lambda_1}{X_1, \ldots, X_n, \lambda_2, \rho, I_1, \ldots, I_n}$. If the PMF / PDF are from a known, brand name random variable, name the distribution and provide its parameter(s). Show all work. \spc{2}
+
+\subquestionwithpoints{4} Find the conditional distribution $\cprob{\lambda_2}{X_1, \ldots, X_n, \lambda_1, \rho, I_1, \ldots, I_n}$. If the PMF / PDF are from a known, brand name random variable, name the distribution and provide its parameter(s). Show all work.\spc{2}
+
+\subquestionwithpoints{6} Find the conditional distribution $\cprob{\rho}{X_1, \ldots, X_n, \lambda_1, \lambda_2, I_1, \ldots, I_n}$. If the PMF / PDF is from a known, brand name random variable, name the distribution and provide its parameter(s). Show all work.\spc{4}
+
+
+\subquestionwithpoints{5} [Extra Credit] Find the conditional distribution for $I_1$ given the data and the other parameters. If the PMF / PDF is from a known, brand name random variable, name the distribution and provide its parameter(s). Show all work.\spc{6}
+
+Below is a bar plot of our data for $n = 300$ days:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=4.9in]{data_barplot}
+\end{figure}
+\FloatBarrier
+
+We now build a Gibbs Sampler for all parameters $\lambda_1, \lambda_2, \rho, I_1, \ldots, I_n$ based on your answers from (a)-(h) and initially sample $10,000$ times. Below is the first 50 samples from the chains for $\lambda_1, \lambda_2, \rho$:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=7.5in]{burn_in}
+\end{figure}
+\FloatBarrier
+
+\subquestionwithpoints{3} How many of the initial samples should be thrown away? \spc{7}
+
+After removing the initial part of the chain according to your answer in the previous question, below is an autocorrelation plot of the chains for $\lambda_1, \lambda_2, \rho$ with maximum lag 10:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=7.5in]{acf}
+\end{figure}
+\FloatBarrier
+
+\subquestionwithpoints{3} How many iterations do you think should be skipped between samples in the burned-in chains if you want $\iid$ samples from the posterior? \spc{1}
+
+\subquestionwithpoints{4} How many $\iid$ samples from the posterior do you have now? \spc{2}
+
+The next page shows four different histograms: one for each of the burned and thinned chains for $\lambda_1, \lambda_2, \rho$ and $I_{31}$.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=7in]{lambda1s}
+\includegraphics[width=7in]{lambda2s}
+\includegraphics[width=7in]{rhos}
+\includegraphics[width=5in]{I31}
+\end{figure}
+\FloatBarrier
+
+
+\subquestionwithpoints{6} Provide an approximate $CR_{\lambda_1, 90\%}$. \spc{4}
+
+\subquestionwithpoints{5} Provide an approximate Bayesian point estimate for $\lambda_2$. Indicate which point estimate you are providing by specifying the subscript to $\thetahat$. \spc{4}
+
+\subquestionwithpoints{8} Test $\rho \neq 0.3$ using $\delta = 0.05$. List the hypotheses, pick an $\alpha$ level and provide an approximate Bayesian $p$-value and give a one sentence interpretation of the test result. \spc{7}
+
+\subquestionwithpoints{4} In your estimation, what type of customer dominates day 31's phone calls? \spc{1}
+
+
+
+
+\subquestionwithpoints{8} Explain how you would provide \emph{one} prediction for the next day's number of phone calls. Clearly write out all your steps. Make sure the company can run your code. The functions you use from Table~\ref{tab:eqs} must have explicit numeric values.  Below are 10 random samples from the burned and thinned chains for parameters $\lambda_1, \lambda_2, \rho$:
+
+ 
+\begin{verbatim}
+          [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9] [,10]
+lambda1s 0.731 0.573 0.861 0.770 0.797 0.683 0.597 0.649 0.670 0.784
+lambda2s 7.312 7.203 7.259 7.077 7.328 7.489 7.006 6.709 6.950 7.036
+rhos     0.356 0.271 0.291 0.388 0.301 0.314 0.296 0.254 0.251 0.260
+\end{verbatim}
+
+Your answer must use some of the above numbers somehow.\spc{9}
+
+
+\eenum
+
+\problem This question is about building a model to understand the accuracy of this beverage-filling machine
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=2.4in]{milk_filling.jpg}
+\end{figure}
+
+\noindent which fills 12oz plastic bottles. We decide to do an experiment and select $n = 20$ bottles at random and measure the amount of liquid in each bottle. Here are the volumes (in oz):
+
+\begin{verbatim}
+       10.76 11.02 11.62 10.20 12.03 12.18 12.06 11.42 11.93 10.68
+       11.81 11.27 11.68 11.31 11.29 12.37 12.00 10.74 12.04 10.69
+\end{verbatim}
+
+\noindent and sample statistics: $\xbar = 11.6$oz and $s = 0.53$oz. We will consider these measurements realizations from $\mathcal{F} : \Xoneton~|~\theta, \sigsq \iid \normnot{\theta}{\sigsq}$ where both $\theta$ and $\sigsq$ are unknown.
+\benum
+
+
+\subquestionwithpoints{3} If the posterior of interest is $\cprob{\theta, \sigsq}{\Xoneton}$, provide a non-informative conjugate prior for both $\theta$ and $\sigsq$ below. It does not need to be proper.\spc{1}
+
+
+\subquestionwithpoints{5} Using the prior from (a) and function(s) from Table~\ref{tab:eqs}, provide an exact $CR_{\theta, 95\%}$ .\spc{2}
+
+
+\subquestionwithpoints{5} Using the prior from (a), find $\sigsqhat_{MMSE}$.\spc{3}
+
+
+\subquestionwithpoints{6} Using the prior from (a) and function(s) from Table~\ref{tab:eqs}, find the probability that the next milk bottle will have less than 12oz of milk.\spc{3}
+
+\subquestionwithpoints{5} Compute the following integral as a function of $a$, $b$ and fundamental constants. To get full credit you must show and justify all steps. \\~\\
+$\displaystyle\int_\reals e^{ax - bx^2} dx = $\spc{5}
+\eenum
+
+\end{document}

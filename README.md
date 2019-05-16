@@ -52,7 +52,7 @@ My lectures can be listened to as youtube tracks and lecture notes are also scan
 
 * Midterm II Thurs, April 16 (in class, KY283) [(exam)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/exams/midterm2/midterm2.pdf) [(solutions)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/exams/midterm2/midterm2_solutions.pdf)
 
-* Final Wednesday, May 16 8:30-10:30AM (in class, KY283)
+* Final Wednesday, May 16 8:30-10:30AM (in class, KY283) [(exam)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/exams/final/final.pdf) [(solutions)](https://github.com/kapelner/QC_Math_341_Spring_2019/blob/master/exams/final/final_solutions.pdf)
 
 ## Practice Exams
 
